@@ -894,15 +894,17 @@ export default function ProfessionalPortfolio() {
                             Contribuições Acadêmicas
                           </h4>
                           <ul className="space-y-2">
-                            {selectedPub.contributions?.map((item, index) => (
-                              <li
-                                key={index}
-                                className="flex items-start gap-2 text-sm text-slate-500"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
-                                {item}
-                              </li>
-                            ))}
+                            {selectedPub.contributions?.map(
+                              (item: string, index: number) => (
+                                <li
+                                  key={index}
+                                  className="flex items-start gap-2 text-sm text-slate-500"
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                                  {item}
+                                </li>
+                              ),
+                            )}
                           </ul>
                         </div>
                       </div>
