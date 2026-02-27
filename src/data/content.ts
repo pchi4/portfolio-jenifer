@@ -68,7 +68,6 @@ export const certifications = [
   { title: "O Controle Social no SUAS", issuer: "PAULUS Brasil", date: "2025", code: "OPCIONAL" }
 ];
 
-// Adicione isso ao seu arquivo de dados existente
 export const ethicalPillars = [
   {
     title: "Interseccionalidade",
@@ -128,50 +127,69 @@ export const manifesto = {
 export const extensionGallery = [
   {
     id: 1,
-    title: "Territórios de Escuta",
-    subtitle: "Extensão Universitária / UFBA",
-    year: "2023",
-    color: "bg-emerald-700",
-    description: "Intervenção psicossocial em comunidades periféricas de Salvador, focada na escuta clínica e subjetividade.",
-    fullDescription: "Este projeto visou deslocar a clínica tradicional para os espaços públicos, promovendo a saúde mental em territórios de alta vulnerabilidade. Através de rodas de conversa e atendimentos itinerantes, trabalhamos a despatologização do sofrimento e o fortalecimento dos vínculos comunitários.",
-    tags: ["Clínica Ampliada", "SUS", "Saúde Coletiva"],
+    title: "Adolescência e Pandemia: Uma Revisão de Escopo",
+    subtitle: "Pesquisa Acadêmica / UFBA",
+    year: "2024 - 2025",
+    color: "bg-emerald-800",
+    image: "/projetos/adolescencia.jpg", // Lembre de adicionar a imagem na pasta public
+    description: "Pesquisa sistemática sobre os impactos da COVID-19 no cotidiano de adolescentes brasileiros em situação de vulnerabilidade.",
+    fullDescription: "Como bolsista do projeto 'Impactos da pandemia COVID-19 - Ano III', atuei na realização de uma revisão de escopo ampla e sistematizada. O foco foi preencher a lacuna de estudos qualitativos e interseccionais sobre a população infanto-juvenil brasileira, mapeando desdobramentos psicossociais que muitas vezes são negligenciados por métricas puramente quantitativas.",
+    tags: ["Psicologia do Desenvolvimento", "Pesquisa Qualitativa", "Saúde Coletiva"],
     objectives: [
-      "Promover espaços de fala em territórios vulneráveis.",
-      "Fortalecer a rede de apoio local.",
-      "Produzir relatórios sobre subjetividade e território."
+      "Levantamento e rastreamento de dados bibliográficos mundiais.",
+      "Análise de aspectos macrossociais e interseccionais na adolescência.",
+      "Sistematização da produção científica nacional vs. internacional."
     ],
-    impact: "Atendimento direto a mais de 50 famílias e criação de um grupo permanente de escuta na comunidade."
+    impact: "Fornecimento de um panorama completo das características da produção científica na área, auxiliando futuras intervenções em saúde mental pública."
   },
   {
     id: 2,
-    title: "Pesquisa PIBIC: Subjetividade e Arte",
-    subtitle: "Iniciação Científica",
-    year: "2022",
-    color: "bg-amber-600",
-    description: "Investigação sobre os atravessamentos artísticos na constituição do sujeito contemporâneo.",
-    fullDescription: "Pesquisa realizada sob orientação acadêmica que explorou como as práticas artísticas atuam como ferramentas de resistência e cuidado em saúde mental. O estudo resultou na análise de oficinas terapêuticas e seu impacto na reabilitação psicossocial.",
-    tags: ["Psicanálise", "Arte-terapia", "Acadêmico"],
+    title: "Vigilância, Promoção em Saúde e Movimento Social",
+    subtitle: "Extensão e Campo / Distrito Brotas",
+    year: "2024 - 2025",
+    color: "bg-indigo-900",
+    image: "/projetos/vigilancia.jpg",
+    description: "Atuação direta com o Consultório na Rua (CNaR) e Movimento Populações de Rua da Bahia.",
+    fullDescription: "Projeto focado na execução de ações de vigilância em saúde e equidade. Atuei no Distrito Sanitário de Brotas, em Salvador, articulando estratégias de redução de riscos psicossociais e monitoramento de agravos (HIV/AIDS/ISTs) para pessoas em situação de rua, unindo a prática clínica à militância social.",
+    tags: ["Vigilância em Saúde", "Epidemiologia", "Redução de Danos", "População de Rua"],
     objectives: [
-      "Analisar o impacto da arte na saúde mental.",
-      "Sistematizar dados de oficinas terapêuticas.",
-      "Apresentação em congressos nacionais."
+      "Promoção da saúde e educação junto ao Movimento Social da População de Rua.",
+      "Aconselhamento e encaminhamento para serviços especializados em Salvador.",
+      "Análise de notificações de doenças e violências em territórios vulneráveis."
     ],
-    impact: "Publicação de artigo em congresso e base para desenvolvimento de novas metodologias clínicas."
+    impact: "Formação de agentes multiplicadores de conhecimento e fortalecimento da Política Nacional de Vigilância em Saúde no território."
   },
   {
     id: 3,
-    title: "Redução de Danos no Carnaval",
-    subtitle: "Atuação em Redução de Danos",
-    year: "2024",
-    color: "bg-indigo-700",
-    description: "Estratégias de cuidado e redução de danos em contextos de festas populares e uso de substâncias.",
-    fullDescription: "Atuação direta nos circuitos do Carnaval de Salvador, focada na mitigação de riscos relacionados ao uso de substâncias psicoativas. O trabalho envolveu acolhimento, orientação técnica e intervenção em crises, pautado na ética do cuidado e autonomia.",
-    tags: ["Redução de Danos", "Cuidado", "Políticas Públicas"],
+    title: "Sobre Medo, Saudade e Anseios",
+    subtitle: "Pesquisa Qualitativa / Salvador",
+    year: "2023 - 2024",
+    color: "bg-amber-700",
+    image: "/projetos/sobre-medo.jpg",
+    description: "Análise das repercussões psicoemocionais em adolescentes em vulnerabilidade durante a pandemia.",
+    fullDescription: "Estudo integrado de âmbito nacional que ouviu 43 adolescentes de Salvador em contextos de extrema vulnerabilidade (situação de rua, acolhimento institucional e conflito com a lei). A pesquisa revelou a complexidade das emoções silenciadas durante o isolamento e a dificuldade de nomeação de sentimentos por essa população.",
+    tags: ["Saúde Mental", "Psicanálise", "Vulnerabilidade Social"],
     objectives: [
-      "Oferecer acolhimento em situações de crise.",
-      "Distribuir material informativo e insumos de cuidado.",
-      "Treinamento de equipes de suporte."
+      "Realização de entrevistas semiestruturadas com adolescentes de 12 a 20 anos.",
+      "Identificação de impactos emocionais (medo, ansiedade, raiva e luto).",
+      "Mapeamento de experiências emocionais positivas e negativas no isolamento."
     ],
-    impact: "Redução significativa de intercorrências graves no perímetro de atuação e acolhimento humanizado."
+    impact: "Reforço da urgência de espaços de escuta qualificados e despatologização do sofrimento adolescente em Salvador."
+  },
+  {
+    id: 4,
+    title: "Crianças na UFBA",
+    subtitle: "Extensão Universitária / Monitoria",
+    year: "2023",
+    color: "bg-rose-700",
+    description: "Promoção de ocupação lúdica e desinstitucionalização dos tempos livres na universidade.",
+    fullDescription: "Projeto fundamentado nos princípios de infância livre do consumo e solidariedade. Como monitora, atuei na organização de edições mensais que permitiam às crianças (filhas de estudantes e servidores) ocupar o espaço universitário com liberdade lúdica, promovendo o lazer como direito e saúde.",
+    tags: ["Infância", "Lazer e Saúde", "Intervenção Grupal"],
+    objectives: [
+      "Organização e mediação de atividades lúdicas criativas.",
+      "Acolhimento de familiares e suporte à desinstitucionalização do tempo livre.",
+      "Preservação ambiental e fomento à solidariedade comunitária no campus."
+    ],
+    impact: "Efetivação das edições de 2023.1, fortalecendo o vínculo entre a comunidade acadêmica e suas redes de apoio familiar."
   }
 ];

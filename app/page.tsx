@@ -1,4 +1,4 @@
-"use client"; // Necessário para animações e interatividade
+"use client";
 
 import {
   profile,
@@ -10,32 +10,24 @@ import {
   manifesto,
   extensionGallery,
 } from "@/src/data/content";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useSpring,
-  Variants,
-} from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import {
   ArrowUpRight,
   Award,
   BookOpen,
-  Briefcase,
   ChevronRight,
   FileText,
   Hash,
-  Heart,
-  ImageIcon,
+  Instagram,
   Linkedin,
   Mail,
   MapPin,
   MoveRight,
-  Plus,
   Quote,
   Scale,
   ScrollText,
   Shield,
+  ShieldCheck,
   Sparkles,
   Target,
   Users,
@@ -52,20 +44,8 @@ export default function ProfessionalPortfolio() {
     restDelta: 0.001,
   });
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  } as any;
-
   const [selectedProject, setSelectedProject] = useState<any>(null);
-const [selectedPub, setSelectedPub] = useState<any>(null);
+  const [selectedPub, setSelectedPub] = useState<any>(null);
   return (
     <div className="bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased">
       <motion.div
@@ -74,47 +54,57 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
       />
 
       {/* NAVBAR MINIMALISTA */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
-          {/* LOGO: No mobile, usamos apenas a inicial ou o primeiro nome para ganhar espaço */}
+      <nav className="fixed top-6 w-full z-[100] px-4">
+        <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0,05)] rounded-full px-6 h-16 flex items-center justify-between gap-4">
+          {/* LOGO: Com toque de classe */}
           <a
             href="#sobre"
-            className="font-serif font-bold text-base sm:text-lg tracking-tight uppercase flex-shrink-0"
+            className="flex items-center gap-2 group transition-all"
           >
-            <span className="md:hidden">J. Nascimento</span> {/* Mobile */}
-            <span className="hidden md:inline">{profile.name}</span>{" "}
-            {/* Desktop */}
+            <div className="w-8 h-8 bg-[#2D4F43] rounded-full flex items-center justify-center text-white font-serif italic font-bold text-sm group-hover:rotate-12 transition-transform">
+              J
+            </div>
+            <span className="font-serif font-bold text-sm sm:text-base tracking-tight text-slate-900">
+              <span className="md:hidden">Nascimento</span>
+              <span className="hidden md:inline">{profile.name}</span>
+            </span>
           </a>
 
-          {/* MENU DE LINKS: Todos visíveis, mas com texto menor no mobile */}
-          <div className="flex items-center gap-3 sm:gap-6 text-[9px] xs:text-[11px] sm:text-sm font-bold uppercase tracking-wider text-slate-400">
-            <a href="#sobre" className="hover:text-[#2D4F43] transition-colors">
+          {/* MENU DE LINKS: Espaçamento orgânico e hover inteligente */}
+          <div className="hidden sm:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            <a
+              href="#sobre"
+              className="hover:text-[#2D4F43] transition-all relative group"
+            >
               Sobre
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
             </a>
             <a
               href="#experiencia"
-              className="hover:text-[#2D4F43] transition-colors"
+              className="hover:text-[#2D4F43] transition-all relative group"
             >
               Trajetória
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
             </a>
             <a
               href="#producao"
-              className="hover:text-[#2D4F43] transition-colors"
+              className="hover:text-[#2D4F43] transition-all relative group"
             >
               Produção
-            </a>
-            <a
-              href="#formacao"
-              className="hidden xs:block hover:text-[#2D4F43] transition-colors"
-            >
-              Formação
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
             </a>
           </div>
 
-          {/* BOTÃO CONTATO: Mais estreito no mobile para não empurrar o menu */}
+          {/* MENU MOBILE (Somente ícones ou links curtos para não quebrar) */}
+          <div className="flex sm:hidden items-center gap-4 text-[9px] font-bold uppercase tracking-widest text-slate-500">
+            <a href="#sobre">Sobre</a>
+            <a href="#producao">Produção</a>
+          </div>
+
+          {/* CTA: Botão com efeito de profundidade */}
           <a
             href="mailto:contato@email.com"
-            className="bg-[#2D4F43] text-white px-3 sm:px-6 py-2 rounded-full text-[10px] sm:text-sm font-semibold hover:bg-[#1f3a31] transition-all whitespace-nowrap flex-shrink-0"
+            className="bg-[#2D4F43] text-white px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-[#1f3a31] hover:scale-105 active:scale-95 transition-all shadow-lg shadow-emerald-900/20 whitespace-nowrap"
           >
             Contato
           </a>
@@ -228,7 +218,7 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
           </div>
         </div>
       </section>
-      
+
       {/* EXPERIÊNCIA - GRID PROFISSIONAL */}
       <section id="experiencia" className="py-32 bg-[#F8FAFA] px-6">
         <div className="max-w-7xl mx-auto">
@@ -338,7 +328,7 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
           </div>
         </div>
       </section>
-      
+
       {/* FORMAÇÃO E CERTIFICAÇÕES - LAYOUT "CLEAN CARD" */}
       <section id="formacao" className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -467,22 +457,34 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
               onClick={() => setSelectedProject(item)}
               className="group bg-white rounded-[3rem] p-4 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-emerald-100"
             >
-              <div className={`h-64 ${item.color} rounded-[2.5rem] relative overflow-hidden flex items-center justify-center`}>
-                <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
-                <div className="relative z-10 bg-white/90 p-5 rounded-full shadow-xl group-hover:scale-110 transition-transform duration-500">
-                  <Sparkles className="text-slate-800 w-8 h-8" />
-                </div>
+              {/* AREA DA IMAGEM NO CARD */}
+              <div className="h-64 rounded-[2.5rem] relative overflow-hidden bg-slate-100">
+                {item.image ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                ) : (
+                  <div className={`w-full h-full ${item.color} flex items-center justify-center`}>
+                    <Sparkles className="text-white/40 w-8 h-8" />
+                  </div>
+                )}
+                {/* Overlay para dar um brilho extra no hover */}
+                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <div className="p-8">
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-4 block">
                   {item.subtitle}
                 </span>
-                <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                <h3 className="text-2xl font-serif font-bold mb-4 text-slate-900">
+                  {item.title}
+                </h3>
                 <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
                   {item.description}
                 </p>
-                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-900">
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-900 group-hover:text-emerald-700 transition-colors">
                   <ArrowUpRight size={14} /> Detalhes do Projeto
                 </div>
               </div>
@@ -491,7 +493,7 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
         </div>
       </div>
 
-      {/* MODAL EDITORIAL ROBUSTO */}
+      {/* MODAL EDITORIAL ROBUSTO COM IMAGEM */}
       <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6">
@@ -507,7 +509,7 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
               layoutId={`card-${selectedProject.id}`}
               className="bg-white w-full max-w-6xl h-full md:h-[90vh] rounded-none md:rounded-[3.5rem] overflow-hidden relative z-10 flex flex-col shadow-2xl"
             >
-              {/* HEADER FIXO */}
+              {/* HEADER DO MODAL */}
               <div className="flex justify-between items-center p-6 md:p-8 border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
                 <div className="flex items-center gap-4">
                   <div className={`w-3 h-3 rounded-full ${selectedProject.color}`} />
@@ -515,24 +517,42 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
                     Documentação Acadêmica • {selectedProject.year}
                   </span>
                 </div>
-                <button onClick={() => setSelectedProject(null)} className="p-3 hover:bg-slate-100 rounded-full transition-all">
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="p-3 hover:bg-slate-100 rounded-full transition-all"
+                >
                   <X size={20} className="text-slate-400" />
                 </button>
               </div>
 
-              {/* CONTEÚDO SCROLLABLE */}
+              {/* CONTEÚDO DO MODAL */}
               <div className="overflow-y-auto">
                 <div className="grid lg:grid-cols-2">
-                  <div className={`h-[300px] md:h-auto ${selectedProject.color} flex items-center justify-center p-12 relative text-white`}>
-                    <Sparkles size={120} className="opacity-20" />
+                  {/* IMAGEM NO MODAL */}
+                  <div className="h-[350px] md:h-auto bg-slate-200 relative overflow-hidden">
+                    {selectedProject.image ? (
+                      <img 
+                        src={selectedProject.image} 
+                        alt={selectedProject.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className={`w-full h-full ${selectedProject.color} flex items-center justify-center`}>
+                        <Sparkles size={120} className="opacity-20 text-white" />
+                      </div>
+                    )}
                   </div>
-                  <div className="p-10 md:p-20 flex flex-col justify-center">
+                  
+                  <div className="p-10 md:p-20 flex flex-col justify-center bg-white">
                     <h3 className="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.1] mb-8">
                       {selectedProject.title}
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.tags.map((tag: string) => (
-                        <span key={tag} className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                        <span
+                          key={tag}
+                          className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500"
+                        >
                           {tag}
                         </span>
                       ))}
@@ -541,18 +561,24 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
                 </div>
 
                 <div className="max-w-5xl mx-auto p-10 md:p-20 grid md:grid-cols-12 gap-16">
+                  {/* TEXTO DETALHADO */}
                   <div className="md:col-span-7 space-y-12">
                     <section>
-                      <h4 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-6">A Proposta</h4>
+                      <h4 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-6 text-balance">
+                        A Proposta
+                      </h4>
                       <p className="text-xl font-serif text-slate-700 leading-relaxed italic">
                         {selectedProject.fullDescription}
                       </p>
                     </section>
                   </div>
 
+                  {/* CARDS LATERAIS DE OBJETIVOS */}
                   <div className="md:col-span-5 space-y-8">
                     <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                      <h4 className="text-xs font-bold text-slate-900 uppercase mb-6">Objetivos & Impacto</h4>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase mb-6">
+                        Objetivos & Impacto
+                      </h4>
                       <ul className="space-y-4">
                         {selectedProject.objectives.map((obj: string, idx: number) => (
                           <li key={idx} className="flex gap-4 items-start text-sm text-slate-600 leading-tight">
@@ -562,15 +588,23 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
                         ))}
                       </ul>
                       <div className="mt-8 pt-6 border-t border-slate-200">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Impacto Final</p>
-                        <p className="text-sm text-slate-900 font-medium italic">"{selectedProject.impact}"</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">
+                          Impacto Final
+                        </p>
+                        <p className="text-sm text-slate-900 font-medium italic">
+                          "{selectedProject.impact}"
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
+                {/* BOTÃO DE FECHAR NO FINAL */}
                 <div className="p-10 border-t border-slate-100 text-center bg-slate-50/50">
-                  <button onClick={() => setSelectedProject(null)} className="px-12 py-5 bg-[#2D4F43] text-white rounded-full font-bold text-xs uppercase tracking-[0.3em] hover:scale-105 transition-all">
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="px-12 py-5 bg-[#2D4F43] text-white rounded-full font-bold text-[10px] uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-xl shadow-emerald-900/10"
+                  >
                     Fechar Galeria
                   </button>
                 </div>
@@ -580,7 +614,6 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
         )}
       </AnimatePresence>
     </section>
-
       <section className="py-32 px-6 bg-white overflow-hidden relative">
         {/* Toque de Arte: Formas geométricas suaves de fundo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-emerald-50/50 rounded-[100%] blur-3xl -z-0" />
@@ -644,206 +677,298 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
         </div>
       </section>
 
-<section id="producao" className="py-24 px-6 bg-[#F1F5F9] rounded-[4rem] mx-4 lg:mx-10 mb-20 mt-20 relative overflow-hidden">
-      {/* Background Decorativo Sutil */}
-      <div className="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
-        <BookOpen size={400} />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16 ml-4">
-          <h2 className="text-4xl font-serif font-bold text-slate-900 leading-tight">
-            Produção <br /> <span className="italic text-emerald-800">Científica & Acadêmica</span>
-          </h2>
+      <section
+        id="producao"
+        className="py-24 px-6 bg-[#F1F5F9] rounded-[4rem] mx-4 lg:mx-10 mb-20 mt-20 relative overflow-hidden"
+      >
+        {/* Background Decorativo Sutil */}
+        <div className="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
+          <BookOpen size={400} />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {scientificProduction.map((pub, i) => (
-            <motion.div
-              key={i}
-              layoutId={`pub-${pub.id}`}
-              onClick={() => setSelectedPub(pub)}
-              className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-transparent hover:border-emerald-100 flex flex-col h-full"
-            >
-              <div className="flex items-center justify-between mb-8">
-                <div className="p-3 bg-slate-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                  <FileText size={20} />
-                </div>
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
-                  {pub.type}
-                </span>
-              </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="mb-16 ml-4">
+            <h2 className="text-4xl font-serif font-bold text-slate-900 leading-tight">
+              Produção <br />{" "}
+              <span className="italic text-emerald-800">
+                Científica & Acadêmica
+              </span>
+            </h2>
+          </div>
 
-              <h3 className="text-xl font-serif font-bold mb-4 leading-tight text-slate-800">
-                {pub.title}
-              </h3>
-              
-              <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
-                {pub.description}
-              </p>
-
-              <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Instituição</span>
-                  <span className="text-xs font-bold text-[#2D4F43]">{pub.institution}</span>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-emerald-50 transition-colors">
-                  <ChevronRight size={14} className="text-slate-400 group-hover:text-emerald-600" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* MODAL DE LEITURA ACADÊMICA */}
-      <AnimatePresence>
-        {selectedPub && (
-          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedPub(null)}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
-            />
-
-            <motion.div
-              layoutId={`pub-${selectedPub.id}`}
-              className="bg-white w-full max-w-3xl max-h-[85vh] rounded-[3rem] overflow-hidden relative z-10 flex flex-col shadow-2xl"
-            >
-              {/* Barra de Topo do Modal */}
-              <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
-                <div className="flex items-center gap-2">
-                  <BookOpen size={16} className="text-emerald-600" />
-                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 tracking-widest">Leitura Técnica</span>
-                </div>
-                <button onClick={() => setSelectedPub(null)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
-                  <X size={20} className="text-slate-400" />
-                </button>
-              </div>
-
-              {/* Conteúdo Acadêmico */}
-              <div className="p-8 md:p-16 overflow-y-auto">
-                <div className="max-w-2xl mx-auto">
-                  <span className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold uppercase mb-6 tracking-widest">
-                    {selectedPub.year} • {selectedPub.institution}
-                  </span>
-                  
-                  <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight mb-10">
-                    {selectedPub.title}
-                  </h3>
-
-                  <div className="space-y-12">
-                    {/* Seção: Resumo */}
-                    <section>
-                      <div className="flex items-center gap-2 mb-4">
-                        <Quote size={18} className="text-emerald-200" />
-                        <h4 className="text-sm font-bold uppercase text-slate-900 tracking-widest">Abstract / Resumo</h4>
-                      </div>
-                      <p className="text-slate-600 leading-relaxed font-serif text-lg">
-                        {selectedPub.fullAbstract || selectedPub.description}
-                      </p>
-                    </section>
-
-                    {/* Seção: Metodologia */}
-                    {selectedPub.methodology && (
-                      <section className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                        <h4 className="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4">Metodologia Aplicada</h4>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                          {selectedPub.methodology}
-                        </p>
-                      </section>
-                    )}
-
-                    {/* Seção: Keywords */}
-                    <section>
-                      <div className="flex flex-wrap gap-2 pt-6 border-t border-slate-100">
-                        {selectedPub.keywords?.map((tag: string) => (
-                          <div key={tag} className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 rounded-full text-[10px] text-slate-500 font-medium">
-                            <Hash size={10} className="text-emerald-400" />
-                            {tag}
-                          </div>
-                        ))}
-                      </div>
-                    </section>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {scientificProduction.map((pub, i) => (
+              <motion.div
+                key={i}
+                layoutId={`pub-${pub.id}`}
+                onClick={() => setSelectedPub(pub)}
+                className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-transparent hover:border-emerald-100 flex flex-col h-full"
+              >
+                <div className="flex items-center justify-between mb-8">
+                  <div className="p-3 bg-slate-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <FileText size={20} />
                   </div>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
+                    {pub.type}
+                  </span>
+                </div>
 
-                  <button 
+                <h3 className="text-xl font-serif font-bold mb-4 leading-tight text-slate-800">
+                  {pub.title}
+                </h3>
+
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
+                  {pub.description}
+                </p>
+
+                <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">
+                      Instituição
+                    </span>
+                    <span className="text-xs font-bold text-[#2D4F43]">
+                      {pub.institution}
+                    </span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-emerald-50 transition-colors">
+                    <ChevronRight
+                      size={14}
+                      className="text-slate-400 group-hover:text-emerald-600"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* MODAL DE LEITURA ACADÊMICA */}
+        <AnimatePresence>
+          {selectedPub && (
+            <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedPub(null)}
+                className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
+              />
+
+              <motion.div
+                layoutId={`pub-${selectedPub.id}`}
+                className="bg-white w-full max-w-3xl max-h-[85vh] rounded-[3rem] overflow-hidden relative z-10 flex flex-col shadow-2xl"
+              >
+                {/* Barra de Topo do Modal */}
+                <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
+                  <div className="flex items-center gap-2">
+                    <BookOpen size={16} className="text-emerald-600" />
+                    <span className="text-[10px] font-mono font-bold uppercase text-slate-400 tracking-widest">
+                      Leitura Técnica
+                    </span>
+                  </div>
+                  <button
                     onClick={() => setSelectedPub(null)}
-                    className="mt-16 w-full py-5 bg-slate-900 text-white rounded-[2rem] font-bold text-xs uppercase tracking-[0.3em] hover:bg-emerald-900 transition-colors shadow-xl"
+                    className="p-2 hover:bg-slate-100 rounded-full transition-colors"
                   >
-                    Concluir Leitura
+                    <X size={20} className="text-slate-400" />
                   </button>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-    </section>
+
+                {/* Conteúdo Acadêmico */}
+                <div className="p-8 md:p-16 overflow-y-auto">
+                  <div className="max-w-2xl mx-auto">
+                    <span className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold uppercase mb-6 tracking-widest">
+                      {selectedPub.year} • {selectedPub.institution}
+                    </span>
+
+                    <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight mb-10">
+                      {selectedPub.title}
+                    </h3>
+
+                    <div className="space-y-12">
+                      {/* Seção: Resumo */}
+                      <section>
+                        <div className="flex items-center gap-2 mb-4">
+                          <Quote size={18} className="text-emerald-200" />
+                          <h4 className="text-sm font-bold uppercase text-slate-900 tracking-widest">
+                            Abstract / Resumo
+                          </h4>
+                        </div>
+                        <p className="text-slate-600 leading-relaxed font-serif text-lg">
+                          {selectedPub.fullAbstract || selectedPub.description}
+                        </p>
+                      </section>
+
+                      {/* Seção: Metodologia */}
+                      {selectedPub.methodology && (
+                        <section className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                          <h4 className="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4">
+                            Metodologia Aplicada
+                          </h4>
+                          <p className="text-sm text-slate-700 leading-relaxed">
+                            {selectedPub.methodology}
+                          </p>
+                        </section>
+                      )}
+
+                      {/* Seção: Keywords */}
+                      <section>
+                        <div className="flex flex-wrap gap-2 pt-6 border-t border-slate-100">
+                          {selectedPub.keywords?.map((tag: string) => (
+                            <div
+                              key={tag}
+                              className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 rounded-full text-[10px] text-slate-500 font-medium"
+                            >
+                              <Hash size={10} className="text-emerald-400" />
+                              {tag}
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedPub(null)}
+                      className="mt-16 w-full py-5 bg-slate-900 text-white rounded-[2rem] font-bold text-xs uppercase tracking-[0.3em] hover:bg-emerald-900 transition-colors shadow-xl"
+                    >
+                      Concluir Leitura
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
+      </section>
 
       {/* FOOTER - CHAMADA PARA AÇÃO */}
-      <footer className="py-32 bg-white border-t border-slate-100 px-6 overflow-hidden">
+      <footer className="relative py-32 bg-[#F8FAFC] border-t border-slate-200 px-6 overflow-hidden">
+        {/* Elemento de Design: Círculo de cor sutil para profundidade */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-100/40 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-slate-200/30 rounded-full blur-[100px] pointer-events-none" />
+
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          variants={fadeIn}
-          className="max-w-4xl mx-auto text-center relative"
+          className="max-w-6xl mx-auto relative z-10"
         >
-          {/* Decoração artística */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-emerald-50 rounded-full blur-3xl -z-10 opacity-60" />
-
-          <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-tight">
-            Vamos construir uma escuta que faça sentido para o{" "}
-            <span className="italic text-[#2D4F43]">seu território?</span>
-          </h2>
-
-          <p className="text-slate-500 text-lg mb-12 max-w-xl mx-auto">
-            Pronta para colaborar em projetos de impacto social, saúde pública
-            ou atendimento clínico em Salvador.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href="mailto:contato@jenifer.com"
-              className="flex items-center gap-3 px-12 py-6 bg-[#2D4F43] text-white rounded-full font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-emerald-900/30 transition-all active:scale-95 w-full sm:w-auto"
-            >
-              <Mail size={22} /> Iniciar Conversa
-            </a>
-            <a
-              href="http://lattes.cnpq.br/xxxxxxxx" // <-- COLOQUE O LINK DO LATTES AQUI
-              target="_blank"
-              className="flex items-center gap-3 px-12 py-6 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all w-full sm:w-auto"
-            >
-              <BookOpen size={22} /> Currículo Lattes
-            </a>
-          </div>
-
-          {/* BLOCO DE IDENTIDADE PROFISSIONAL (CRP AQUI) */}
-          <div className="mt-24 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em]">
-            <div className="text-center md:text-left">
-              <p className="text-slate-900 font-bold mb-1">
-                Jenifer Nascimento
-              </p>
-              <p>Psicóloga • CRP 03/XXXXX</p>{" "}
-              {/* <-- COLOQUE O NÚMERO DELA AQUI */}
-            </div>
-
-            <p className="hidden sm:block text-center">
-              Salvador • Bahia • Brasil
+          {/* Chamada Principal (CTA) */}
+          <div className="max-w-4xl mx-auto text-center mb-24">
+            <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-[1.1] text-slate-900">
+              Vamos construir uma escuta que faça sentido para o{" "}
+              <span className="italic text-[#2D4F43]">seu território?</span>
+            </h2>
+            <p className="text-slate-500 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              Disponível para colaborações em projetos de impacto social,
+              pesquisa acadêmica e clínica psicanalítica em Salvador.
             </p>
 
-            <div className="flex items-center gap-2">
-              <Sparkles size={12} className="text-emerald-500" />
-              <span>Design & Psicologia</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="mailto:contato@jenifer.com"
+                className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#2D4F43] text-white rounded-full font-bold text-base hover:shadow-[0_20px_40px_rgba(45,79,67,0.3)] transition-all duration-500 w-full sm:w-auto"
+              >
+                <Mail
+                  size={20}
+                  className="group-hover:-rotate-12 transition-transform"
+                />
+                Iniciar Conversa
+              </a>
+              <a
+                href="http://lattes.cnpq.br/xxxxxxxx"
+                target="_blank"
+                className="flex items-center justify-center gap-3 px-10 py-5 bg-white border border-slate-200 rounded-full font-bold text-base hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm"
+              >
+                <BookOpen size={20} className="text-emerald-600" /> Currículo
+                Lattes
+              </a>
             </div>
           </div>
 
-          <p className="mt-8 text-[9px] text-slate-300 font-mono uppercase tracking-widest">
-            © 2026 • Todos os direitos reservados
-          </p>
+          {/* Estrutura de Informações (Grid Robusto) */}
+          <div className="grid md:grid-cols-4 gap-12 pt-20 border-t border-slate-200">
+            {/* Coluna 1: Identidade */}
+            <div className="md:col-span-2 space-y-6">
+              <div>
+                <h3 className="font-serif text-2xl font-bold text-slate-900">
+                  {profile.name}
+                </h3>
+                <p className="text-xs font-mono uppercase tracking-[0.3em] text-emerald-600 font-bold mt-2">
+                  Psicóloga & Pesquisadora
+                </p>
+              </div>
+              <p className="text-sm text-slate-500 max-w-xs leading-relaxed">
+                Prática clínica e social pautada na ética, no território e na
+                escuta das subjetividades contemporâneas.
+              </p>
+              <div className="flex items-center gap-4 pt-4 text-slate-400">
+                <a href="#" className="hover:text-[#2D4F43] transition-colors">
+                  <Instagram size={18} />
+                </a>
+                <a href="#" className="hover:text-[#2D4F43] transition-colors">
+                  <Linkedin size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* Coluna 2: Navegação Rápida */}
+            <div className="space-y-6">
+              <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-900 font-bold">
+                Navegação
+              </h4>
+              <ul className="space-y-4 text-sm text-slate-500">
+                <li>
+                  <a
+                    href="#sobre"
+                    className="hover:text-emerald-600 transition-colors"
+                  >
+                    Sobre mim
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#experiencia"
+                    className="hover:text-emerald-600 transition-colors"
+                  >
+                    Trajetória
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#producao"
+                    className="hover:text-emerald-600 transition-colors"
+                  >
+                    Produção Científica
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Coluna 3: Formalidades (CRP) */}
+            <div className="space-y-6">
+              <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-900 font-bold">
+                Registro & Local
+              </h4>
+              <div className="text-sm text-slate-500 space-y-2">
+                <p className="flex items-center gap-2">
+                  <ShieldCheck size={14} className="text-emerald-500" />
+                  CRP 03/XXXXX
+                </p>
+                <p className="flex items-center gap-2">
+                  <MapPin size={14} className="text-emerald-500" />
+                  Salvador, Bahia
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar: Finalização */}
+          <div className="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-[10px] text-slate-400 font-mono uppercase tracking-widest">
+              © 2026 • Todos os direitos reservados
+            </p>
+          </div>
         </motion.div>
       </footer>
     </div>
