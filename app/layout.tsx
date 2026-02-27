@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
@@ -15,8 +15,17 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "Jenifer Nascimento | Psicóloga Clínica e Social em Salvador",
-  description: "Psicóloga graduada pela UFBA, pós-graduanda em Saúde Mental e Atenção Psicossocial. Atuação em Redução de Danos, Direitos Humanos e Políticas Públicas em Salvador, Bahia.",
-  keywords: ["Psicóloga Salvador", "Saúde Mental", "Redução de Danos", "Jenifer Nascimento Psicologia", "UFBA", "Atenção Psicossocial"],
+  description:
+    "Psicóloga graduada pela UFBA, pós-graduanda em Saúde Mental e Atenção Psicossocial. Atuação em Redução de Danos, Direitos Humanos e Políticas Públicas em Salvador, Bahia.",
+  keywords: [
+    "Psicóloga Salvador",
+    "Saúde Mental",
+    "Saúde Coletiva",
+    "Redução de Danos",
+    "Jenifer Nascimento Psicologia",
+    "UFBA",
+    "Atenção Psicossocial",
+  ],
 };
 
 export default function RootLayout({
