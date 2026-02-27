@@ -10,21 +10,39 @@ import {
   manifesto,
   extensionGallery,
 } from "@/src/data/content";
-import { motion, useScroll, useSpring, Variants } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+  Variants,
+} from "framer-motion";
 import {
   ArrowUpRight,
   Award,
   BookOpen,
   Briefcase,
+  ChevronRight,
+  FileText,
+  Hash,
   Heart,
+  ImageIcon,
   Linkedin,
   Mail,
   MapPin,
   MoveRight,
+  Plus,
+  Quote,
+  Scale,
   ScrollText,
+  Shield,
   Sparkles,
+  Target,
+  Users,
+  X,
 } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function ProfessionalPortfolio() {
   const { scrollYProgress } = useScroll();
@@ -34,18 +52,20 @@ export default function ProfessionalPortfolio() {
     restDelta: 0.001,
   });
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut"
-    } 
-  }
-} as any;
+  const fadeIn = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  } as any;
 
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+const [selectedPub, setSelectedPub] = useState<any>(null);
   return (
     <div className="bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased">
       <motion.div
@@ -174,175 +194,392 @@ const fadeIn = {
 
       <section
         id="valores"
-        className="py-24 bg-[#2D4F43] text-white rounded-[3rem] mx-4 lg:mx-10 overflow-hidden"
+        className="py-20 bg-[#2D4F43] text-white rounded-[2.5rem] mx-4 lg:mx-10 overflow-hidden relative"
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid lg:grid-cols-3 gap-6">
             {ethicalPillars.map((pilar, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="space-y-4 p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                whileHover={{ y: -5 }}
+                className="group p-8 rounded-[2rem] bg-white/[0.04] border border-white/10 hover:border-emerald-400/30 transition-all duration-300"
               >
-                <Heart className="text-emerald-400" />
-                <h3 className="text-2xl font-serif">{pilar.title}</h3>
-                <p className="text-emerald-100/70 leading-relaxed">
+                {/* Cabeçalho Compacto: Ícone + Número */}
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400">
+                    {i === 0 && <Shield size={20} />}
+                    {i === 1 && <Users size={20} />}
+                    {i === 2 && <Scale size={20} />}
+                  </div>
+                  <span className="font-mono text-[10px] text-white/20 tracking-widest font-bold">
+                    0{i + 1}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-serif mb-3 group-hover:text-emerald-300 transition-colors">
+                  {pilar.title}
+                </h3>
+
+                <p className="text-sm text-emerald-100/60 leading-relaxed line-clamp-4">
                   {pilar.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-
+      
       {/* EXPERIÊNCIA - GRID PROFISSIONAL */}
-      <section
-        id="experiencia"
-        className="py-24 bg-white border-y border-slate-100"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-16">
-            <h2 className="text-4xl font-serif font-medium italic">
-              Experiência Selecionada
-            </h2>
-            <div className="text-slate-400 text-sm font-mono uppercase">
-              2020 — 2026
-            </div>
-          </div>
+      <section id="experiencia" className="py-32 bg-[#F8FAFA] px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* Lado Esquerdo: Título Fixo (Sticky) */}
+            <div className="lg:col-span-4">
+              <div className="lg:sticky lg:top-32">
+                <span className="text-[#2D4F43] font-mono text-xs uppercase tracking-[0.3em] font-bold">
+                  02. Trajetória
+                </span>
+                <h2 className="text-5xl font-serif mt-6 mb-8 leading-tight">
+                  Experiência <br />
+                  <span className="italic">Profissional</span>
+                </h2>
+                <p className="text-slate-500 text-lg leading-relaxed">
+                  Consolidando a escuta clínica no serviço público e em projetos
+                  de intervenção psicossocial no território baiano.
+                </p>
 
-          <div className="grid gap-px bg-slate-100 border border-slate-100 overflow-hidden rounded-3xl">
-            {experiences.map((exp, i) => (
-              <div
-                key={i}
-                className="bg-white p-10 hover:bg-slate-50 transition-all group"
-              >
-                <div className="grid md:grid-cols-[1fr_2fr_1fr] items-start gap-8">
-                  <div>
-                    <span className="text-sm font-mono text-slate-400">
+                <div className="mt-12 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                  <p className="text-sm font-bold text-slate-900 mb-2">
+                    Foco de Atuação:
+                  </p>
+                  <ul className="text-sm text-slate-500 space-y-2">
+                    <li className="flex items-center gap-2">
+                      • Saúde Coletiva (SUS)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      • Redução de Danos
+                    </li>
+                    <li className="flex items-center gap-2">
+                      • Psicologia Hospitalar
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Lado Direito: A Linha do Tempo Robusta */}
+            <div className="lg:col-span-8 space-y-12">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative pl-8 border-l-2 border-slate-200 hover:border-[#2D4F43] transition-colors pb-4"
+                >
+                  {/* O "Ponto" na linha do tempo */}
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-2 border-[#2D4F43]" />
+
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                    <div className="flex flex-col">
+                      <span className="text-[#2D4F43] font-mono text-[10px] font-bold uppercase tracking-widest">
+                        {exp.company}
+                      </span>
+                      <h3 className="text-2xl font-bold text-slate-900 mt-1">
+                        {exp.role}
+                      </h3>
+                    </div>
+                    <span className="inline-block px-4 py-1 bg-white border border-slate-200 text-slate-500 rounded-full text-[10px] font-bold font-mono whitespace-nowrap">
                       {exp.period}
                     </span>
-                    <h3 className="text-xl font-bold mt-2 group-hover:text-[#2D4F43] transition-colors">
-                      {exp.title}
-                    </h3>
                   </div>
-                  <p className="text-slate-500 leading-relaxed text-sm lg:text-base">
-                    {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-end">
-                    {exp.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-slate-100 rounded-md text-[10px] font-bold uppercase text-slate-500 tracking-wider"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+
+                  <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-50 group hover:shadow-md transition-all">
+                    <p className="text-slate-600 leading-relaxed mb-6 italic">
+                      "{exp.description}"
+                    </p>
+
+                    {/* Realizações em Tópicos (Deixa o CV muito mais forte) */}
+                    <div className="space-y-3 mb-8">
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">
+                        Principais Contribuições:
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="flex items-start gap-2 text-sm text-slate-600">
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                          Atendimento clínico individual e em grupo.
+                        </div>
+                        <div className="flex items-start gap-2 text-sm text-slate-600">
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                          Articulação de rede e suporte institucional.
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Skills/Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Saúde Mental",
+                        "Território",
+                        "Relatórios Técnicos",
+                      ].map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-3 py-1 bg-emerald-50 text-[#2D4F43] text-[9px] rounded-md font-bold uppercase tracking-tighter"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
+      
       {/* FORMAÇÃO E CERTIFICAÇÕES - LAYOUT "CLEAN CARD" */}
-      <section id="formacao" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
-          <div>
-            <div className="flex items-center gap-3 mb-10">
-              <div className="w-10 h-[2px] bg-[#2D4F43]" />
-              <h2 className="text-2xl font-serif font-bold uppercase tracking-widest">
-                Formação Acadêmica
-              </h2>
-            </div>
-            <div className="space-y-12">
-              {education.map((edu, i) => (
-                <div key={i} className="group cursor-default">
-                  <p className="text-xs font-mono text-emerald-600 mb-2 font-bold uppercase tracking-widest">
-                    {edu.period}
-                  </p>
-                  <h4 className="text-2xl font-bold mb-1 group-hover:translate-x-2 transition-transform">
-                    {edu.degree}
-                  </h4>
-                  <p className="text-slate-500 flex items-center gap-2">
-                    {edu.institution}{" "}
-                    <ArrowUpRight
-                      size={14}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity"
-                    />
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section id="formacao" className="py-32 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20">
+            {/* LADO ESQUERDO: FORMAÇÃO ACADÊMICA */}
+            <div>
+              <div className="flex items-center gap-4 mb-16">
+                <div className="w-12 h-[1px] bg-slate-300" />
+                <h2 className="text-sm font-mono font-bold uppercase tracking-[0.3em] text-slate-400">
+                  Educação Formal
+                </h2>
+              </div>
 
-          <div className="bg-[#2D4F43] p-12 rounded-[2.5rem] text-white relative overflow-hidden">
-            <ScrollText className="absolute -right-10 -bottom-10 w-64 h-64 opacity-5" />
-            <h2 className="text-2xl font-serif font-bold mb-10 italic">
-              Certificações & Letramento
-            </h2>
-            <div className="grid gap-6">
-              {certifications.slice(0, 5).map((cert, i) => (
-                <div
-                  key={i}
-                  className="flex justify-between items-center border-b border-white/10 pb-4 hover:border-white/40 transition-colors"
-                >
-                  <div>
-                    <p className="font-bold text-lg">{cert.title}</p>
-                    <p className="text-white/60 text-xs uppercase tracking-wider">
-                      {cert.issuer}
+              <div className="space-y-16">
+                {education.map((edu, i) => (
+                  <div key={i} className="group relative pl-8">
+                    {/* Linha vertical decorativa lateral */}
+                    <div className="absolute left-0 top-0 h-full w-[2px] bg-slate-100 group-hover:bg-[#2D4F43] transition-colors" />
+
+                    <span className="text-xs font-mono text-emerald-700 mb-3 block font-bold tracking-widest">
+                      {edu.period}
+                    </span>
+
+                    <h4 className="text-3xl font-serif font-medium mb-3 text-slate-900 leading-tight">
+                      {edu.degree}
+                    </h4>
+
+                    <div className="flex items-center gap-2 text-slate-500 font-medium mb-4">
+                      <span className="text-lg">{edu.institution}</span>
+                      <div className="w-1 h-1 rounded-full bg-slate-300" />
+                      <span className="text-sm italic">Salvador, BA</span>
+                    </div>
+
+                    {/* O TOQUE ROBUSTO: Adicionando ênfase acadêmica */}
+                    <p className="text-sm text-slate-400 leading-relaxed max-w-md">
+                      Desenvolvimento de pesquisa e prática clínica com foco em
+                      saúde mental coletiva, territórios e vulnerabilidades
+                      sociais dentro do contexto da universidade pública.
                     </p>
                   </div>
-                  <Award size={20} className="text-emerald-400 shrink-0" />
+                ))}
+              </div>
+            </div>
+
+            {/* LADO DIREITO: CERTIFICAÇÕES & LETRAMENTO */}
+            <div className="relative">
+              <div className="bg-[#2D4F43] p-10 md:p-14 rounded-[3rem] text-white shadow-2xl shadow-emerald-950/20 relative overflow-hidden">
+                {/* Elemento de design abstrato */}
+                <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-12">
+                    <Award className="text-emerald-400" size={24} />
+                    <h2 className="text-2xl font-serif font-medium tracking-tight">
+                      Certificações & Letramento
+                    </h2>
+                  </div>
+
+                  <div className="space-y-8">
+                    {certifications.slice(0, 5).map((cert, i) => (
+                      <div
+                        key={i}
+                        className="group cursor-default border-b border-white/10 pb-6 last:border-0 hover:border-white/30 transition-all"
+                      >
+                        <div className="flex justify-between items-start gap-4">
+                          <div>
+                            <p className="font-bold text-lg leading-snug group-hover:text-emerald-300 transition-colors">
+                              {cert.title}
+                            </p>
+                            <div className="flex items-center gap-2 mt-2">
+                              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/50">
+                                {cert.issuer}
+                              </span>
+                              {cert.date && (
+                                <>
+                                  <div className="w-1 h-1 rounded-full bg-white/20" />
+                                  <span className="text-[10px] font-mono text-white/40">
+                                    {cert.date}
+                                  </span>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                          <ArrowUpRight
+                            size={18}
+                            className="text-white/20 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Selo de Credibilidade Adicional */}
+                  <div className="mt-12 pt-8 border-t border-white/5 flex items-center gap-4 text-white/40">
+                    <ScrollText size={32} strokeWidth={1} />
+                    <p className="text-[10px] font-mono uppercase tracking-widest leading-tight">
+                      Pesquisa Acadêmica & <br />
+                      Extensão Universitária
+                    </p>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* GALERIA DE EXTENSÃO - LADO HUMANO E VISUAL */}
-      <section className="py-24 px-6 bg-[#FDF8F3]">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-serif font-bold italic">
-              Projetos & Territórios
-            </h2>
-            <p className="text-slate-500 mt-2">
-              A interface entre a academia, a arte e a atuação social.
-            </p>
-          </div>
+<section id="projetos" className="py-32 px-6 bg-[#FDF8F3]">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-20">
+          <h2 className="text-5xl font-serif font-bold italic text-slate-900">
+            Projetos & Territórios
+          </h2>
+          <p className="text-slate-500 mt-4 text-lg max-w-2xl">
+            A interface entre a pesquisa acadêmica da UFBA e a atuação social em Salvador.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {extensionGallery.map((item, i) => (
-              <div
-                key={i}
-                className={`group relative p-1 bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all`}
-              >
-                {/* Fundo com toque de "Aquarela" usando gradiente suave */}
-                <div
-                  className={`h-48 ${item.color} rounded-[2.2rem] flex items-center justify-center relative overflow-hidden`}
-                >
-                  {/* Formas geométricas decorativas */}
-                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/40 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-                  <Sparkles className="text-white/80 w-12 h-12" />
-                </div>
-
-                <div className="p-8">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2 block">
-                    {item.subtitle}
-                  </span>
-                  <h3 className="text-2xl font-serif font-bold mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+        {/* GRID DE CARDS */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {extensionGallery.map((item, i) => (
+            <motion.div
+              key={i}
+              layoutId={`card-${item.id}`}
+              onClick={() => setSelectedProject(item)}
+              className="group bg-white rounded-[3rem] p-4 shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-transparent hover:border-emerald-100"
+            >
+              <div className={`h-64 ${item.color} rounded-[2.5rem] relative overflow-hidden flex items-center justify-center`}>
+                <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
+                <div className="relative z-10 bg-white/90 p-5 rounded-full shadow-xl group-hover:scale-110 transition-transform duration-500">
+                  <Sparkles className="text-slate-800 w-8 h-8" />
                 </div>
               </div>
-            ))}
-          </div>
+
+              <div className="p-8">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-4 block">
+                  {item.subtitle}
+                </span>
+                <h3 className="text-2xl font-serif font-bold mb-4">{item.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
+                  {item.description}
+                </p>
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-900">
+                  <ArrowUpRight size={14} /> Detalhes do Projeto
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* MODAL EDITORIAL ROBUSTO */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-slate-900/90 backdrop-blur-xl"
+            />
+
+            <motion.div
+              layoutId={`card-${selectedProject.id}`}
+              className="bg-white w-full max-w-6xl h-full md:h-[90vh] rounded-none md:rounded-[3.5rem] overflow-hidden relative z-10 flex flex-col shadow-2xl"
+            >
+              {/* HEADER FIXO */}
+              <div className="flex justify-between items-center p-6 md:p-8 border-b border-slate-100 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
+                <div className="flex items-center gap-4">
+                  <div className={`w-3 h-3 rounded-full ${selectedProject.color}`} />
+                  <span className="font-mono text-[10px] font-bold tracking-[0.3em] text-slate-400 uppercase">
+                    Documentação Acadêmica • {selectedProject.year}
+                  </span>
+                </div>
+                <button onClick={() => setSelectedProject(null)} className="p-3 hover:bg-slate-100 rounded-full transition-all">
+                  <X size={20} className="text-slate-400" />
+                </button>
+              </div>
+
+              {/* CONTEÚDO SCROLLABLE */}
+              <div className="overflow-y-auto">
+                <div className="grid lg:grid-cols-2">
+                  <div className={`h-[300px] md:h-auto ${selectedProject.color} flex items-center justify-center p-12 relative text-white`}>
+                    <Sparkles size={120} className="opacity-20" />
+                  </div>
+                  <div className="p-10 md:p-20 flex flex-col justify-center">
+                    <h3 className="text-4xl md:text-5xl font-serif text-slate-900 leading-[1.1] mb-8">
+                      {selectedProject.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.tags.map((tag: string) => (
+                        <span key={tag} className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="max-w-5xl mx-auto p-10 md:p-20 grid md:grid-cols-12 gap-16">
+                  <div className="md:col-span-7 space-y-12">
+                    <section>
+                      <h4 className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-6">A Proposta</h4>
+                      <p className="text-xl font-serif text-slate-700 leading-relaxed italic">
+                        {selectedProject.fullDescription}
+                      </p>
+                    </section>
+                  </div>
+
+                  <div className="md:col-span-5 space-y-8">
+                    <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                      <h4 className="text-xs font-bold text-slate-900 uppercase mb-6">Objetivos & Impacto</h4>
+                      <ul className="space-y-4">
+                        {selectedProject.objectives.map((obj: string, idx: number) => (
+                          <li key={idx} className="flex gap-4 items-start text-sm text-slate-600 leading-tight">
+                            <Target size={16} className="text-emerald-600 shrink-0 mt-0.5" />
+                            {obj}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-8 pt-6 border-t border-slate-200">
+                        <p className="text-[10px] font-bold text-slate-400 uppercase mb-2">Impacto Final</p>
+                        <p className="text-sm text-slate-900 font-medium italic">"{selectedProject.impact}"</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-10 border-t border-slate-100 text-center bg-slate-50/50">
+                  <button onClick={() => setSelectedProject(null)} className="px-12 py-5 bg-[#2D4F43] text-white rounded-full font-bold text-xs uppercase tracking-[0.3em] hover:scale-105 transition-all">
+                    Fechar Galeria
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </section>
 
       <section className="py-32 px-6 bg-white overflow-hidden relative">
         {/* Toque de Arte: Formas geométricas suaves de fundo */}
@@ -407,40 +644,144 @@ const fadeIn = {
         </div>
       </section>
 
-      <section
-        id="producao"
-        className="py-24 px-6 bg-[#F1F5F9] rounded-[4rem] mx-4 lg:mx-10 mb-20"
-      >
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section id="producao" className="py-24 px-6 bg-[#F1F5F9] rounded-[4rem] mx-4 lg:mx-10 mb-20 mt-20 relative overflow-hidden">
+      {/* Background Decorativo Sutil */}
+      <div className="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
+        <BookOpen size={400} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16 ml-4">
+          <h2 className="text-4xl font-serif font-bold text-slate-900 leading-tight">
+            Produção <br /> <span className="italic text-emerald-800">Científica & Acadêmica</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {scientificProduction.map((pub, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-md transition-all group border border-transparent hover:border-emerald-100"
+              layoutId={`pub-${pub.id}`}
+              onClick={() => setSelectedPub(pub)}
+              className="bg-white p-10 rounded-[3rem] shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-transparent hover:border-emerald-100 flex flex-col h-full"
             >
-              <div className="flex items-center gap-2 mb-6">
-                <BookOpen className="text-emerald-600" size={24} />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+              <div className="flex items-center justify-between mb-8">
+                <div className="p-3 bg-slate-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                  <FileText size={20} />
+                </div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
                   {pub.type}
                 </span>
               </div>
-              <h3 className="text-xl font-serif font-bold mb-4 leading-tight">
+
+              <h3 className="text-xl font-serif font-bold mb-4 leading-tight text-slate-800">
                 {pub.title}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              
+              <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-3">
                 {pub.description}
               </p>
-              <div className="flex justify-between items-center mt-auto pt-4 border-t border-slate-50">
-                <span className="text-xs font-bold text-[#2D4F43]">
-                  {pub.institution}
-                </span>
-                <span className="text-xs font-mono text-slate-300">
-                  {pub.year}
-                </span>
+
+              <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Instituição</span>
+                  <span className="text-xs font-bold text-[#2D4F43]">{pub.institution}</span>
+                </div>
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-emerald-50 transition-colors">
+                  <ChevronRight size={14} className="text-slate-400 group-hover:text-emerald-600" />
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </div>
+
+      {/* MODAL DE LEITURA ACADÊMICA */}
+      <AnimatePresence>
+        {selectedPub && (
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedPub(null)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
+            />
+
+            <motion.div
+              layoutId={`pub-${selectedPub.id}`}
+              className="bg-white w-full max-w-3xl max-h-[85vh] rounded-[3rem] overflow-hidden relative z-10 flex flex-col shadow-2xl"
+            >
+              {/* Barra de Topo do Modal */}
+              <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
+                <div className="flex items-center gap-2">
+                  <BookOpen size={16} className="text-emerald-600" />
+                  <span className="text-[10px] font-mono font-bold uppercase text-slate-400 tracking-widest">Leitura Técnica</span>
+                </div>
+                <button onClick={() => setSelectedPub(null)} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                  <X size={20} className="text-slate-400" />
+                </button>
+              </div>
+
+              {/* Conteúdo Acadêmico */}
+              <div className="p-8 md:p-16 overflow-y-auto">
+                <div className="max-w-2xl mx-auto">
+                  <span className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 rounded-lg text-[10px] font-bold uppercase mb-6 tracking-widest">
+                    {selectedPub.year} • {selectedPub.institution}
+                  </span>
+                  
+                  <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight mb-10">
+                    {selectedPub.title}
+                  </h3>
+
+                  <div className="space-y-12">
+                    {/* Seção: Resumo */}
+                    <section>
+                      <div className="flex items-center gap-2 mb-4">
+                        <Quote size={18} className="text-emerald-200" />
+                        <h4 className="text-sm font-bold uppercase text-slate-900 tracking-widest">Abstract / Resumo</h4>
+                      </div>
+                      <p className="text-slate-600 leading-relaxed font-serif text-lg">
+                        {selectedPub.fullAbstract || selectedPub.description}
+                      </p>
+                    </section>
+
+                    {/* Seção: Metodologia */}
+                    {selectedPub.methodology && (
+                      <section className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
+                        <h4 className="text-xs font-bold uppercase text-slate-400 tracking-widest mb-4">Metodologia Aplicada</h4>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          {selectedPub.methodology}
+                        </p>
+                      </section>
+                    )}
+
+                    {/* Seção: Keywords */}
+                    <section>
+                      <div className="flex flex-wrap gap-2 pt-6 border-t border-slate-100">
+                        {selectedPub.keywords?.map((tag: string) => (
+                          <div key={tag} className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 rounded-full text-[10px] text-slate-500 font-medium">
+                            <Hash size={10} className="text-emerald-400" />
+                            {tag}
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  </div>
+
+                  <button 
+                    onClick={() => setSelectedPub(null)}
+                    className="mt-16 w-full py-5 bg-slate-900 text-white rounded-[2rem] font-bold text-xs uppercase tracking-[0.3em] hover:bg-emerald-900 transition-colors shadow-xl"
+                  >
+                    Concluir Leitura
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </section>
 
       {/* FOOTER - CHAMADA PARA AÇÃO */}
       <footer className="py-32 bg-white border-t border-slate-100 px-6 overflow-hidden">

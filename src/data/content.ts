@@ -86,25 +86,37 @@ export const ethicalPillars = [
 
 export const scientificProduction = [
   {
-    title: "Impactos da pandemia COVID-19 no cotidiano de adolescentes brasileiros",
-    type: "Pesquisa / PIBIC",
-    description: "Revisão de escopo ampla e sistematizada sobre os impactos interseccionais e macrossociais na saúde mental de adolescentes em vulnerabilidade.",
-    institution: "UFBA",
-    year: "2024 - 2025"
-  },
-  {
-    title: "Vigilância e Promoção em Saúde: Distrito Sanitário Brotas",
-    type: "Extensão / Relato Técnico",
-    description: "Desenvolvimento de ações de redução de riscos psicossociais e controle de ISTs em parceria com o Movimento Nacional da População de Rua.",
-    institution: "CNaR / UFBA",
-    year: "2024"
-  },
-  {
-    title: "Crianças na UFBA: Ocupação Lúdica e Desinstitucionalização",
-    type: "Projeto de Extensão",
-    description: "Monitoria voltada para a garantia do direito ao brincar e ocupação do espaço universitário por crianças e comunidades do entorno.",
+    id: "pub-1",
+    type: "Artigo / Pesquisa",
+    title: "A clínica nos territórios: atravessamentos da subjetividade",
+    description: "Análise sobre a prática psicológica em contextos de vulnerabilidade social em Salvador.",
+    fullAbstract: "Este estudo investiga como a subjetividade é produzida em territórios periféricos, questionando os limites da clínica tradicional e propondo estratégias de cuidado baseadas na saúde coletiva. A pesquisa destaca a importância de uma psicologia sensível às questões raciais e socioeconômicas presentes na capital baiana.",
+    methodology: "Pesquisa-ação de caráter qualitativo, realizada através de diários de campo e observação participante em Centros de Referência.",
+    keywords: ["Saúde Coletiva", "Território", "Subjetividade"],
     institution: "UFBA",
     year: "2023"
+  },
+  {
+    id: "pub-2",
+    type: "Resumo Expandido",
+    title: "Redução de Danos e Políticas Públicas na Bahia",
+    description: "Estudo sobre o impacto das estratégias de redução de danos na rede de atenção psicossocial.",
+    fullAbstract: "O trabalho analisa a implementação de estratégias de Redução de Danos (RD) como ferramenta ética no cuidado a usuários de substâncias psicoativas. O foco reside na autonomia do sujeito e na crítica às políticas proibicionistas que aprofundam a exclusão social.",
+    methodology: "Revisão bibliográfica sistemática integrada à análise de dados da Secretaria de Saúde do Estado da Bahia.",
+    keywords: ["Redução de Danos", "Autonomia", "Saúde Pública"],
+    institution: "UFBA",
+    year: "2022"
+  },
+  {
+    id: "pub-3",
+    type: "Relatório Técnico",
+    title: "Saúde Mental e Educação: Um Diálogo Necessário",
+    description: "Intervenções psicológicas no ambiente escolar e a promoção de espaços de escuta.",
+    fullAbstract: "Relatório detalhado sobre intervenções realizadas no contexto escolar, focando na prevenção de violências e na promoção da saúde mental de adolescentes. O documento propõe diretrizes para a criação de grupos de escuta mútua entre alunos e educadores.",
+    methodology: "Sistematização de experiência prática em escolas da rede pública estadual durante o período de estágio supervisionado.",
+    keywords: ["Psicologia Escolar", "Adolescência", "Prevenção"],
+    institution: "UFBA",
+    year: "2024"
   }
 ];
 
@@ -115,22 +127,51 @@ export const manifesto = {
 
 export const extensionGallery = [
   {
-    title: "Crianças na UFBA",
-    subtitle: "Ocupação Lúdica",
-    description: "Projeto focado na desinstitucionalização da infância e no direito ao brincar no espaço universitário.",
-    color: "bg-blue-50" 
+    id: 1,
+    title: "Territórios de Escuta",
+    subtitle: "Extensão Universitária / UFBA",
+    year: "2023",
+    color: "bg-emerald-700",
+    description: "Intervenção psicossocial em comunidades periféricas de Salvador, focada na escuta clínica e subjetividade.",
+    fullDescription: "Este projeto visou deslocar a clínica tradicional para os espaços públicos, promovendo a saúde mental em territórios de alta vulnerabilidade. Através de rodas de conversa e atendimentos itinerantes, trabalhamos a despatologização do sofrimento e o fortalecimento dos vínculos comunitários.",
+    tags: ["Clínica Ampliada", "SUS", "Saúde Coletiva"],
+    objectives: [
+      "Promover espaços de fala em territórios vulneráveis.",
+      "Fortalecer a rede de apoio local.",
+      "Produzir relatórios sobre subjetividade e território."
+    ],
+    impact: "Atendimento direto a mais de 50 famílias e criação de um grupo permanente de escuta na comunidade."
   },
   {
-    title: "Consultório na Rua",
-    subtitle: "Saúde Coletiva",
-    description: "Atuação direta no território, articulando redução de danos e cuidados em saúde mental.",
-    color: "bg-emerald-50"
+    id: 2,
+    title: "Pesquisa PIBIC: Subjetividade e Arte",
+    subtitle: "Iniciação Científica",
+    year: "2022",
+    color: "bg-amber-600",
+    description: "Investigação sobre os atravessamentos artísticos na constituição do sujeito contemporâneo.",
+    fullDescription: "Pesquisa realizada sob orientação acadêmica que explorou como as práticas artísticas atuam como ferramentas de resistência e cuidado em saúde mental. O estudo resultou na análise de oficinas terapêuticas e seu impacto na reabilitação psicossocial.",
+    tags: ["Psicanálise", "Arte-terapia", "Acadêmico"],
+    objectives: [
+      "Analisar o impacto da arte na saúde mental.",
+      "Sistematizar dados de oficinas terapêuticas.",
+      "Apresentação em congressos nacionais."
+    ],
+    impact: "Publicação de artigo em congresso e base para desenvolvimento de novas metodologias clínicas."
   },
   {
-    title: "Redução de Danos",
-    subtitle: "Movimento PopRua",
-    description: "Parceria com movimentos sociais para promoção de direitos e vigilância em saúde.",
-    color: "bg-amber-50"
+    id: 3,
+    title: "Redução de Danos no Carnaval",
+    subtitle: "Atuação em Redução de Danos",
+    year: "2024",
+    color: "bg-indigo-700",
+    description: "Estratégias de cuidado e redução de danos em contextos de festas populares e uso de substâncias.",
+    fullDescription: "Atuação direta nos circuitos do Carnaval de Salvador, focada na mitigação de riscos relacionados ao uso de substâncias psicoativas. O trabalho envolveu acolhimento, orientação técnica e intervenção em crises, pautado na ética do cuidado e autonomia.",
+    tags: ["Redução de Danos", "Cuidado", "Políticas Públicas"],
+    objectives: [
+      "Oferecer acolhimento em situações de crise.",
+      "Distribuir material informativo e insumos de cuidado.",
+      "Treinamento de equipes de suporte."
+    ],
+    impact: "Redução significativa de intercorrências graves no perímetro de atuação e acolhimento humanizado."
   }
 ];
-
