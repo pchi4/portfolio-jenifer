@@ -34,7 +34,6 @@ export default function ProfessionalPortfolio() {
     restDelta: 0.001,
   });
 
-  // Variante para animação de surgimento das seções
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
