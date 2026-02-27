@@ -286,7 +286,7 @@ const [selectedPub, setSelectedPub] = useState<any>(null);
                         {exp.company}
                       </span>
                       <h3 className="text-2xl font-bold text-slate-900 mt-1">
-                        {exp.role}
+                        {exp.title}
                       </h3>
                     </div>
                     <span className="inline-block px-4 py-1 bg-white border border-slate-200 text-slate-500 rounded-full text-[10px] font-bold font-mono whitespace-nowrap">
