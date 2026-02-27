@@ -10,7 +10,7 @@ import {
   manifesto,
   extensionGallery,
 } from "@/src/data/content";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, Variants } from "framer-motion";
 import {
   ArrowUpRight,
   Award,
@@ -35,17 +35,17 @@ export default function ProfessionalPortfolio() {
   });
 
   // Variante para animação de surgimento das seções
-const fadeIn: Variants = {
+const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
     y: 0, 
     transition: { 
       duration: 0.8, 
-      ease: "easeOut" // Agora o TypeScript entende que é um valor válido
+      ease: "easeOut"
     } 
   }
-};
+} as any;
 
   return (
     <div className="bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased">

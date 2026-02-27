@@ -61,11 +61,11 @@ export const education = [
 ];
 
 export const certifications = [
-  { title: "Gestalt-terapia: uma introdução", issuer: "Observatório em Gestalt-Terapia IPSS/UFBA", date: "2025" },
-  { title: "Letramento Racial no Setor Público", issuer: "ENAP", date: "2025" },
-  { title: "Manejo da Coinfecção Tuberculose-HIV", issuer: "FIOCRUZ", date: "2024" },
-  { title: "Enfrentamento ao estigma em populações vulneráveis", issuer: "FIOCRUZ", date: "2025" },
-  { title: "O Controle Social no SUAS", issuer: "PAULUS Brasil", date: "2025" }
+  { title: "Gestalt-terapia: uma introdução", issuer: "Observatório em Gestalt-Terapia IPSS/UFBA", date: "2025", code: "OPCIONAL"  },
+  { title: "Letramento Racial no Setor Público", issuer: "ENAP", date: "2025", code: "OPCIONAL" },
+  { title: "Manejo da Coinfecção Tuberculose-HIV", issuer: "FIOCRUZ", date: "2024", code: "OPCIONAL" },
+  { title: "Enfrentamento ao estigma em populações vulneráveis", issuer: "FIOCRUZ", date: "2025", code: "OPCIONAL" },
+  { title: "O Controle Social no SUAS", issuer: "PAULUS Brasil", date: "2025", code: "OPCIONAL" }
 ];
 
 // Adicione isso ao seu arquivo de dados existente
