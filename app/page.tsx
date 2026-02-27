@@ -35,14 +35,17 @@ export default function ProfessionalPortfolio() {
   });
 
   // Variante para animação de surgimento das seções
-  const fadeIn = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
+const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.8, 
+      ease: "easeOut" // Agora o TypeScript entende que é um valor válido
+    } 
+  }
+};
 
   return (
     <div className="bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased">
