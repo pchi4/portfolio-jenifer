@@ -13,21 +13,36 @@ export const experiences = [
     title: "Estagiária de Psicologia",
     company: "Conselho Municipal de Assistência Social / Prefeitura de Salvador",
     period: "mar de 2025 - dez de 2025",
-    description: "Apoio técnico e administrativo sob as diretrizes da PNAS. Colaboração em triagens, redação de documentos técnicos e participação em visitas institucionais e reuniões de controle social.",
+    description: "Apoio técnico e administrativo sob as diretrizes da PNAS. Colaboração em triagens, redação de documentos técnicos e participação em visitas institucionais.",
+    highlights: [
+      "Colaboração técnica em reuniões de controle social.",
+      "Acompanhamento de diretrizes da Política Nacional de Assistência Social.",
+      "Redação de relatórios e documentos técnicos institucionais."
+    ],
     tags: ["PNAS", "Controle Social", "Políticas Públicas"]
   },
   {
     title: "Extensionista - Consultório na Rua (CNaR)",
     company: "Distrito Sanitário de Brotas / Movimento Nacional PopRua",
     period: "mar de 2024 - mar de 2025",
-    description: "Promoção de saúde e redução de riscos psicossociais para populações vulneráveis. Foco em prevenção de ISTs/HIV e fortalecimento de redes de cuidado.",
+    description: "Promoção de saúde e redução de riscos psicossociais para populações vulneráveis em Salvador.",
+    highlights: [
+      "Ações de Redução de Danos e prevenção de ISTs/HIV.",
+      "Articulação com o Movimento Nacional da População de Rua.",
+      "Acolhimento e escuta qualificada em territórios vulneráveis."
+    ],
     tags: ["Redução de Danos", "Saúde Mental", "Vulnerabilidade"]
   },
   {
     title: "Bolsista de Iniciação Científica (PIBIC)",
     company: "UFBA - Psicologia do Desenvolvimento",
     period: "out de 2023 - out de 2025",
-    description: "Investigação dos impactos da COVID-19 em adolescentes em situação de vulnerabilidade. Realização de revisão de escopo e análise de dados interseccionais.",
+    description: "Investigação dos impactos da COVID-19 em adolescentes em situação de vulnerabilidade.",
+    highlights: [
+      "Realização de revisão de escopo e levantamento bibliográfico.",
+      "Análise de dados interseccionais e impacto psicossocial.",
+      "Produção de relatórios científicos e apresentações acadêmicas."
+    ],
     tags: ["Pesquisa Qualitativa", "Desenvolvimento Humano", "Saúde Mental"]
   },
   {
@@ -35,6 +50,11 @@ export const experiences = [
     company: "FUNCEB - Fundação Cultural do Estado da Bahia",
     period: "jan de 2020 - jan de 2021",
     description: "Experiência em gestão cultural e apoio administrativo durante a primeira graduação.",
+    highlights: [
+      "Apoio na gestão de editais e projetos culturais.",
+      "Suporte administrativo em processos da fundação.",
+      "Organização de fluxos de trabalho institucionais."
+    ],
     tags: ["Gestão", "Cultura", "Artes"]
   }
 ];
@@ -182,6 +202,7 @@ export const extensionGallery = [
     subtitle: "Extensão Universitária / Monitoria",
     year: "2023",
     color: "bg-rose-700",
+     image: "/projetos/criancas-outro.png", 
     description: "Promoção de ocupação lúdica e desinstitucionalização dos tempos livres na universidade.",
     fullDescription: "Projeto fundamentado nos princípios de infância livre do consumo e solidariedade. Como monitora, atuei na organização de edições mensais que permitiam às crianças (filhas de estudantes e servidores) ocupar o espaço universitário com liberdade lúdica, promovendo o lazer como direito e saúde.",
     tags: ["Infância", "Lazer e Saúde", "Intervenção Grupal"],
