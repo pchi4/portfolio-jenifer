@@ -6,7 +6,7 @@ export default function ValuesSection() {
   return (
     <section
       id="valores"
-      className="py-20 bg-[#2D4F43] text-white rounded-[2.5rem] mx-4 lg:mx-10 overflow-hidden relative"
+      className="py-20 bg-[#4A2C2A] text-[#F9F5F1] rounded-[2.5rem] mx-4 lg:mx-10 overflow-hidden relative"
     >
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid lg:grid-cols-3 gap-6">
@@ -14,10 +14,11 @@ export default function ValuesSection() {
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
-              className="group p-8 rounded-[2rem] bg-white/[0.04] border border-white/10 hover:border-emerald-400/30 transition-all duration-300"
+              className="group p-8 rounded-[2rem] bg-white/[0.03] border border-white/5 hover:border-[#B8860B]/40 transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-6">
-                <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400">
+                {/* ÍCONES EM OURO DENDÊ (Substituindo emerald-500) */}
+                <div className="p-3 bg-[#B8860B]/10 rounded-xl text-[#B8860B]">
                   {i === 0 && <Shield size={20} />}
                   {i === 1 && <Users size={20} />}
                   {i === 2 && <Scale size={20} />}
@@ -27,11 +28,13 @@ export default function ValuesSection() {
                 </span>
               </div>
 
-              <h3 className="text-xl font-serif mb-3 group-hover:text-emerald-300 transition-colors">
+              {/* TÍTULO EM OURO NO HOVER */}
+              <h3 className="text-xl font-serif mb-3 group-hover:text-[#D4AF37] transition-colors font-medium">
                 {pilar.title}
               </h3>
 
-              <p className="text-sm text-emerald-100/60 leading-relaxed line-clamp-4">
+              {/* TEXTO EM AREIA COM OPACIDADE (Substituindo emerald-100) */}
+              <p className="text-sm text-[#F9F5F1]/60 leading-relaxed line-clamp-4 font-sans">
                 {pilar.description}
               </p>
             </motion.div>
