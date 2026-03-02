@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { extensionGallery, manifesto } from "@/src/data/content";
 import { useState } from "react";
-import { ArrowUpRight, Sparkles, Target } from "lucide-react";
+import { ArrowUpRight, Sparkles, Target, X } from "lucide-react";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -138,6 +138,7 @@ export default function ProjectsSection() {
                           </span>
                         ))}
                       </div>
+                      
                     </div>
                   </div>
 

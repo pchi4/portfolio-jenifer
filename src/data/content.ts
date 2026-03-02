@@ -2,40 +2,61 @@ export const profile = {
   name: "Jenifer Nascimento",
   pronouns: "Ela/Dela",
   role: "Psicóloga | Pós-Graduanda em Saúde Mental e Atenção Psicossocial",
-  specialties: ["Redução de Danos", "Direitos Humanos", "Saúde Coletiva"],
+  specialties: [
+    "Atenção Psicossocial",
+    "Redução de Riscos e Danos",
+    "Saúde Coletiva",
+  ],
   location: "Salvador, Bahia",
   summary:
-    "Psicóloga pela UFBA, com sólida trajetória em pesquisa científica e projetos de extensão. Especialista em investigação de aspectos psicossociais, redução de riscos e danos, e promoção da saúde em contextos de vulnerabilidade social. Comprometida com a ética, responsabilidade social e a interface com políticas públicas para o bem-estar coletivo.",
+    "Psicóloga formada pela UFBA, com consistente experiência em pesquisa científica e atuação em projetos de extensão. Possui interesse nos processos psicossociais, na redução de riscos e danos e na promoção da saúde em contextos de vulnerabilidade social. Atua de forma pautada na ética e na responsabilidade social, com foco na articulação entre prática profissional e políticas públicas voltadas ao bem-estar coletivo.",
   seeking: ["Psicologia Clínica", "Psicologia Comunitária", "Saúde Mental"],
 };
 
 export const experiences = [
   {
+    title: "Estagiária em Psicologia Clínica",
+    company: "Instituto de Psicologia e Serviço Social da UFBA (IPSS/UFBA)",
+    period: "Maio de 2025 - Fev de 2026",
+    description:
+      "Atendimento a adolescentes e adultos, realização de acolhimento inicial, entrevistas de triagem e clínicas, planejamento e condução de sessões psicoterapêuticas sob supervisão em Gestalt-terapia.",
+    highlights: [
+      "Escuta clínica qualificada, construção de vínculo terapêutico e manejo de crises emocionais.",
+      "Participação em supervisões clínicas, estudos em Gestalt-terapia e discussão sistemática dos caso",
+      "Articulação com a rede de atenção psicossocial para encaminhamentos e acompanhamento dos casos",
+    ],
+    tags: ["Escuta Clínica", "Vínculo Terapêutico", "Gestalt-terapia"],
+  },
+  {
     title: "Estagiária de Psicologia",
     company:
-      "Conselho Municipal de Assistência Social / Prefeitura de Salvador",
+      "Conselho Municipal de Assistência Social (CMASS) / Prefeitura de Salvador",
     period: "Mar de 2025 - Dez de 2025",
     description:
-      "Apoio técnico e administrativo sob as diretrizes da PNAS. Colaboração em triagens, redação de documentos técnicos e participação em visitas institucionais.",
+      "Apoio técnico e administrativo em conformidade com as diretrizes da Política Nacional de Assistência Social (PNAS). Atuação em triagens, elaboração de documentos técnicos e participação em visitas institucionais a entidades socioassistenciais.",
     highlights: [
-      "Colaboração técnica em reuniões de controle social.",
-      "Acompanhamento de diretrizes da Política Nacional de Assistência Social.",
+      "Colaboração técnica em reuniões de Controle Social.",
+      "Acompanhamento de diretrizes da Política Nacional de Assistência Social (PNAS).",
       "Redação de relatórios e documentos técnicos institucionais.",
     ],
     tags: ["PNAS", "Controle Social", "Políticas Públicas"],
   },
   {
     title: "Extensionista - Consultório na Rua (CNaR)",
-    company: "Distrito Sanitário de Brotas / Movimento Nacional PopRua",
+    company: "PNVS Comunidade 2ª Edição ",
     period: "Mar de 2024 - Mar de 2025",
     description:
-      "Promoção de saúde e redução de riscos psicossociais para populações vulneráveis em Salvador.",
+      "Promoção de saúde, intensificação de cuidado e tratamento e redução de riscos e danos para população em situação de rua no Distrito Sanitário de Brotas em Salvador/BA.",
     highlights: [
-      "Ações de Redução de Danos e prevenção de ISTs/HIV.",
+      "Ações de prevenção, testagem, orientação, aconselhamento e encaminhamento para tratamento de ISTs/HIV, com foco no cuidado integral em saúde.",
       "Articulação com o Movimento Nacional da População de Rua.",
       "Acolhimento e escuta qualificada em territórios vulneráveis.",
     ],
-    tags: ["Redução de Danos", "Saúde Mental", "Vulnerabilidade"],
+    tags: [
+      "Redução de Danos",
+      "Intensificação de Cuidado",
+      "Promoção da Saúde",
+    ],
   },
   {
     title: "Bolsista de Iniciação Científica (PIBIC)",
@@ -45,23 +66,10 @@ export const experiences = [
       "Investigação dos impactos da COVID-19 em adolescentes em situação de vulnerabilidade.",
     highlights: [
       "Realização de revisão de escopo e levantamento bibliográfico.",
-      "Análise de dados interseccionais e impacto psicossocial.",
+      "Sistematização e comunicação dos achados a profissionais da rede socioassistencial de Salvador.",
       "Produção de relatórios científicos e apresentações acadêmicas.",
     ],
-    tags: ["Pesquisa Qualitativa", "Desenvolvimento Humano", "Saúde Mental"],
-  },
-  {
-    title: "Estagiária em Produção Cultural",
-    company: "FUNCEB - Fundação Cultural do Estado da Bahia",
-    period: "Jan de 2020 - Jan de 2021",
-    description:
-      "Experiência em gestão cultural e apoio administrativo durante a primeira graduação.",
-    highlights: [
-      "Apoio na gestão de editais e projetos culturais.",
-      "Suporte administrativo em processos da fundação.",
-      "Organização de fluxos de trabalho institucionais.",
-    ],
-    tags: ["Gestão", "Cultura", "Artes"],
+    tags: ["Pesquisa Qualitativa", "Desenvolvimento Humano e aspectos psicossociais", "Adolescências"],
   },
 ];
 
@@ -80,7 +88,7 @@ export const education = [
     period: "2022 - 2026",
     status: "Concluído",
     description:
-      "Formação pautada na ética da psicanálise e saúde coletiva, com forte atuação em pesquisa qualitativa e extensão universitária em territórios vulneráveis.",
+      "Formação pautada na Psicologia Clínica, Saúde Mental com forte atuação em pesquisa qualitativa e extensão universitária em territórios vulneráveis.",
   },
   {
     degree: "Bacharelado em Artes",
@@ -108,11 +116,11 @@ export const certifications = [
     link: "https://www.linkedin.com/in/jenifer-nascimento-41bb4b229/overlay/Certifications/330606874/treasury?profileId=ACoAADlM5JcBhCB2UNyReB_a1pM3UVDIMU1qVtA",
   },
   {
-    title: "Manejo da Coinfecção Tuberculose-HIV",
+    title: "Aperfeiçoamento em Saúde Mental e Atenção Psicossocial de Adolescentes e Jovens (Fiocruz/UNA-SUS)",
     issuer: "FIOCRUZ",
-    date: "2024",
+    date: "2026",
     code: "OPCIONAL",
-    link: "https://declaracao.unasus.gov.br/seg/4piUBshNKSnyyj7VyNBjbA",
+    link: "https://cursos.matogrossodosul.fiocruz.br/mod/simplecertificate/verify.php?code=699f8c0d-fadc-4d08-b2c3-5e830a021e21",
   },
   {
     title: "Enfrentamento ao estigma em populações vulneráveis",
@@ -149,9 +157,9 @@ export const ethicalPillars = [
       "Cuidado pautado na autonomia, dignidade e acolhimento sem julgamentos em contextos de vulnerabilidade.",
   },
   {
-    title: "Defesa do SUS/SUAS",
+    title: "Defesa do SUS e SUAS",
     description:
-      "Compromisso com a saúde pública gratuita, de qualidade e o fortalecimento das políticas sociais.",
+      "Compromisso com a saúde pública gratuita e de qualidade, bem como com o fortalecimento das políticas sociais.",
   },
 ];
 
@@ -239,7 +247,7 @@ export const extensionGallery = [
     subtitle: "Pesquisa Acadêmica / UFBA",
     year: "2024 - 2025",
     color: "bg-emerald-800",
-    image: "/projetos/adolescencia.jpg",
+    image: "/projetos/pibic.jpeg",
     description:
       "Pesquisa sistemática sobre os impactos da COVID-19 no cotidiano de adolescentes brasileiros em situação de vulnerabilidade.",
     fullDescription:
@@ -247,9 +255,9 @@ export const extensionGallery = [
     context:
       "Realizado no âmbito do Instituto de Psicologia da UFBA, integrando esforços globais de compreensão da saúde mental pós-pandêmica.",
     methodology:
-      "Revisão de escopo seguindo o protocolo JBI (Joanna Briggs Institute), com buscas em bases como PubMed, PsycInfo e SciELO, focando em adolescentes (12-18 anos).",
+      "Revisão de escopo seguindo o protocolo JBI (Joanna Briggs Institute), com buscas em bases como PubMed, PsycInfo e SciELO, focando em adolescentes de 12 a 18 anos em vulnerabilidade social.",
     results:
-      "Identificação de uma predominância de estudos focados em sintomatologia (ansiedade/depressão) e carência de análises sobre território e raça.",
+      "Identificação de uma predominância de estudos focados em aspectos de saúde mental como ansiedade e depressão e carência de análises sobre gênero, raça e classe social.",
     tags: [
       "Psicologia do Desenvolvimento",
       "Pesquisa Qualitativa",
@@ -273,18 +281,18 @@ export const extensionGallery = [
     description:
       "Atuação direta com o Consultório na Rua (CNaR) e Movimento Populações de Rua da Bahia.",
     fullDescription:
-      "Projeto focado na execução de ações de vigilância em saúde e equidade. Atuei articulando estratégias de redução de riscos psicossociais e monitoramento de agravos para pessoas em situação de rua, unindo a prática clínica à militância social.",
+      "Projeto focado na execução de ações de vigilância em saúde e equidade. Atuei articulando estratégias de promoção de saúde, monitoramento de agravos e intensificação de cuidado e tratamento para pessoas em situação de rua.",
     context:
       "Distrito Sanitário de Brotas, Salvador/BA. Articulação intersetorial entre Secretaria Municipal de Saúde e Movimentos Sociais.",
     methodology:
-      "Vigilância ativa de base territorial, educação entre pares e mediação entre a população de rua e as Unidades de Saúde.",
+      "Intensificação de cuidado e tratamento, orientação e aconselhamento, ações de educação em saúde em redução de riscos e danos.",
     results:
-      "Ampliação do acesso a insumos de prevenção e fortalecimento do protagonismo político da população de rua no controle social.",
+      "Atuação na ampliação do cuidado e do tratamento dos agravos, com elaboração de instrumentos técnicos para monitoramento e articulação de encaminhamentos à rede especializada de atenção à saúde.",
     tags: [
       "Vigilância em Saúde",
       "Epidemiologia",
       "Redução de Danos",
-      "População de Rua",
+      "População em Situação de Rua",
     ],
     objectives: [
       "Promoção da saúde e educação junto ao Movimento Social da População de Rua.",

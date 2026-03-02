@@ -129,7 +129,7 @@ export default function ProfessionalPortfolio() {
       <ProjectsSection />
       {/* SEÇÃO ABORDAGEM TÉCNICA */}
 
-      <About />
+      
 
       <footer
         id="contato"

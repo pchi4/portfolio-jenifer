@@ -9,7 +9,7 @@ export function EducationSection() {
           <div>
             <div className="flex items-center gap-4 mb-16">
               <h2 className="text-5xl font-serif font-bold italic text-slate-900">
-                Educação Formal
+                Formação
               </h2>
             </div>
 

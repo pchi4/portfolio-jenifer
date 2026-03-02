@@ -1,4 +1,4 @@
-import { BookOpen, ChevronRight, FileText, Hash } from "lucide-react";
+import { BookOpen, ChevronRight, FileText, Hash, X } from "lucide-react";
 import { scientificProduction } from "../data/content";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";

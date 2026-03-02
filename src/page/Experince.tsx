@@ -27,13 +27,13 @@ export default function Experience() {
                 </p>
                 <ul className="text-sm text-slate-500 space-y-2">
                   <li className="flex items-center gap-2">
-                    • Saúde Coletiva (SUS)
+                    • Cuidado em Saúde Mental 
                   </li>
                   <li className="flex items-center gap-2">
-                    • Redução de Danos
+                    • Redução de Riscos e Danos
                   </li>
                   <li className="flex items-center gap-2">
-                    • Psicologia Hospitalar
+                    • Intensificação de Cuidado e Tratamento
                   </li>
                 </ul>
               </div>

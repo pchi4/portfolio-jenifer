@@ -16,8 +16,8 @@ export default function Hero() {
           </div>
 
           <h1 className="text-6xl lg:text-8xl font-serif font-medium leading-[1.1] mb-8 text-slate-900">
-            Cuidado com <br />
-            <span className="italic text-[#2D4F43]">propósito social.</span>
+            Cuidado<br />
+            <span className="italic text-[#2D4F43]">em Saúde Mental.</span>
           </h1>
 
           <p className="text-xl text-slate-600 leading-relaxed max-w-xl mb-10 font-sans">

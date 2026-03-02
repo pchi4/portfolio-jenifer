@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ethicalPillars } from "@/src/data/content";
-import { Scale, Shield, Users } from "lucide-react";
+import { Scale, Users, Heart } from "lucide-react";
 
 export default function ValuesSection() {
   return (
@@ -18,9 +18,9 @@ export default function ValuesSection() {
             >
               <div className="flex justify-between items-start mb-6">
                 <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400">
-                  {i === 0 && <Shield size={20} />}
-                  {i === 1 && <Users size={20} />}
-                  {i === 2 && <Scale size={20} />}
+                  {i === 0 && <Heart size={20} />}
+                  {i === 1 && <Heart size={20} />}
+                  {i === 2 && <Heart size={20} />}
                 </div>
                 <span className="font-mono text-[10px] text-white/20 tracking-widest font-bold">
                   0{i + 1}
