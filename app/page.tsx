@@ -45,6 +45,8 @@ export default function ProfessionalPortfolio() {
     });
 
     if (response.ok) {
+      sessionStorage.setItem("pode_acessar_obrigado", "true");
+
       window.location.href = "/obrigado";
     } else {
       alert("Ops! Houve um erro ao enviar. Tente novamente.");
@@ -52,49 +54,51 @@ export default function ProfessionalPortfolio() {
   };
 
   return (
-    <div className="bg-[#F8F9FA] text-[#1A1A1A] font-sans antialiased">
+    <div className="bg-[#F9F5F1] min-h-screen selection:bg-[#B8860B]/30 selection:text-[#8B4513]">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-[#2D4F43] origin-left z-[60]"
+        className="fixed top-0 left-0 right-0 h-1 bg-[#B8860B] origin-left z-[60]"
         style={{ scaleX }}
       />
 
       {/* NAVBAR MINIMALISTA */}
       <nav className="fixed top-6 w-full z-[100] px-4">
-        <div className="max-w-5xl mx-auto bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0,05)] rounded-full px-6 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl border border-[#B8860B]/10 shadow-[0_8px_32px_rgba(139,69,19,0.08)] rounded-full px-6 h-16 flex items-center justify-between gap-4">
           <a
             href="#sobre"
             className="flex items-center gap-2 group transition-all"
           >
-            <div className="w-8 h-8 bg-[#2D4F43] rounded-full flex items-center justify-center text-white font-serif italic font-bold text-sm group-hover:rotate-12 transition-transform">
+            {/* LOGO EM TERRACOTA */}
+            <div className="w-8 h-8 bg-[#8B4513] rounded-full flex items-center justify-center text-[#F9F5F1] font-serif italic font-bold text-sm group-hover:rotate-12 transition-transform shadow-md shadow-brand-earth/20">
               J
             </div>
-            <span className="font-serif font-bold text-sm sm:text-base tracking-tight text-slate-900">
+            <span className="font-serif font-bold text-sm sm:text-base tracking-tight text-[#1A1A1A]">
               <span className="md:hidden">Nascimento</span>
               <span className="hidden md:inline">{profile.name}</span>
             </span>
           </a>
 
-          <div className="hidden sm:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+          <div className="hidden sm:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
             <a
               href="#sobre"
-              className="hover:text-[#2D4F43] transition-all relative group"
+              className="hover:text-[#8B4513] transition-all relative group"
             >
               Sobre
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
+              {/* UNDERLINE EM OURO */}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
             </a>
             <a
               href="#experiencia"
-              className="hover:text-[#2D4F43] transition-all relative group"
+              className="hover:text-[#8B4513] transition-all relative group"
             >
               Trajetória
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
             </a>
             <a
               href="#producao"
-              className="hover:text-[#2D4F43] transition-all relative group"
+              className="hover:text-[#8B4513] transition-all relative group"
             >
               Produção
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
             </a>
           </div>
 
@@ -105,7 +109,7 @@ export default function ProfessionalPortfolio() {
 
           <a
             href="#contato"
-            className="bg-[#2D4F43] text-white px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-[#1f3a31] hover:scale-105 active:scale-95 transition-all shadow-lg shadow-emerald-900/20 whitespace-nowrap"
+            className="bg-[#8B4513] text-[#F9F5F1] px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:bg-[#6D360F] hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[#8B4513]/20 whitespace-nowrap"
           >
             Contato
           </a>
@@ -133,10 +137,10 @@ export default function ProfessionalPortfolio() {
 
       <footer
         id="contato"
-        className="relative py-32 bg-[#F8FAFC] border-t border-slate-200 px-6 overflow-hidden"
+        className="relative py-32 bg-[#F9F5F1] border-t border-[#B8860B]/10 px-6 overflow-hidden"
       >
-        {/* Background Decor */}
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-100/40 rounded-full blur-[100px] pointer-events-none" />
+        {/* Decor de fundo em tom Argila/Ouro */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#B8860B]/5 rounded-full blur-[100px] pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -145,20 +149,20 @@ export default function ProfessionalPortfolio() {
           className="max-w-6xl mx-auto relative z-10"
         >
           <div className="max-w-4xl mx-auto text-center mb-24">
-            <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-[1.1] text-slate-900">
+            <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-[1.1] text-[#1A1A1A]">
               Vamos construir uma escuta que faça sentido para o{" "}
-              <span className="italic text-[#2D4F43]">seu território?</span>
+              <span className="italic text-[#8B4513]">seu território?</span>
             </h2>
-            <p className="text-slate-500 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#4A2C2A]/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed font-sans">
               Disponível para colaborações em projetos de impacto social,
               pesquisa acadêmica e clínica psicanalítica em Salvador.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              {/* BOTÃO QUE ABRE O MODAL */}
+              {/* BOTÃO CONTATO - TERRACOTA */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#2D4F43] text-white rounded-full font-bold text-base hover:shadow-[0_20px_40px_rgba(45,79,67,0.3)] transition-all duration-500 w-full sm:w-auto"
+                className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#8B4513] text-[#F9F5F1] rounded-full font-bold text-base hover:bg-[#6D360F] hover:shadow-[0_20px_40px_rgba(139,69,19,0.2)] transition-all duration-500 w-full sm:w-auto"
               >
                 <Mail
                   size={20}
@@ -168,54 +172,54 @@ export default function ProfessionalPortfolio() {
               </button>
 
               <a
-                href="http://lattes.cnpq.br/xxxxxxxx" // Substituir pelo link real quando tiver
+                href="http://lattes.cnpq.br/xxxxxxxx"
                 target="_blank"
-                className="flex items-center justify-center gap-3 px-10 py-5 bg-white border border-slate-200 rounded-full font-bold text-base hover:bg-slate-50 transition-all w-full sm:w-auto shadow-sm text-slate-700"
+                className="flex items-center justify-center gap-3 px-10 py-5 bg-white border border-[#B8860B]/20 rounded-full font-bold text-base hover:bg-[#F9F5F1] transition-all w-full sm:w-auto shadow-sm text-[#8B4513]"
               >
-                <BookOpen size={20} className="text-emerald-600" />
+                <BookOpen size={20} className="text-[#B8860B]" />
                 Currículo Lattes
               </a>
             </div>
           </div>
 
           {/* Informações de Rodapé */}
-          <div className="grid md:grid-cols-4 gap-12 pt-20 border-t border-slate-200">
+          <div className="grid md:grid-cols-4 gap-12 pt-20 border-t border-[#B8860B]/10">
             <div className="md:col-span-2 space-y-6">
               <div>
-                <h3 className="font-serif text-2xl font-bold text-slate-900">
+                <h3 className="font-serif text-2xl font-bold text-[#1A1A1A]">
                   {profile.name}
                 </h3>
-                <p className="text-xs font-mono uppercase tracking-[0.3em] text-emerald-600 font-bold mt-2">
+                <p className="text-xs font-mono uppercase tracking-[0.3em] text-[#B8860B] font-bold mt-2">
                   Psicóloga & Pesquisadora
                 </p>
               </div>
-              <p className="text-sm text-slate-500 max-w-xs leading-relaxed">
+              <p className="text-sm text-[#4A2C2A]/70 max-w-xs leading-relaxed font-sans">
                 Prática clínica e social pautada na ética, no território e na
                 escuta das subjetividades contemporâneas.
               </p>
-              <div className="flex items-center gap-4 pt-4 text-slate-400">
+              <div className="flex items-center gap-4 pt-4 text-[#A45D3D]/50">
                 <a
                   href="https://www.linkedin.com/in/jenifer-nascimento-41bb4b229/"
                   target="_blank"
-                  className="hover:text-[#2D4F43] transition-colors"
+                  className="hover:text-[#8B4513] transition-colors"
                 >
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="hover:text-[#2D4F43] transition-colors">
+                <a href="#" className="hover:text-[#8B4513] transition-colors">
                   <Instagram size={20} />
                 </a>
               </div>
             </div>
 
             <div className="space-y-6">
-              <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-900 font-bold">
+              <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#1A1A1A] font-bold">
                 Navegação
               </h4>
-              <ul className="space-y-4 text-sm text-slate-500">
+              <ul className="space-y-4 text-sm text-[#4A2C2A]/70 font-sans font-medium">
                 <li>
                   <a
                     href="#sobre"
-                    className="hover:text-emerald-600 transition-colors"
+                    className="hover:text-[#8B4513] transition-colors"
                   >
                     Sobre mim
                   </a>
@@ -223,7 +227,7 @@ export default function ProfessionalPortfolio() {
                 <li>
                   <a
                     href="#experiencia"
-                    className="hover:text-emerald-600 transition-colors"
+                    className="hover:text-[#8B4513] transition-colors"
                   >
                     Trajetória
                   </a>
@@ -231,7 +235,7 @@ export default function ProfessionalPortfolio() {
                 <li>
                   <a
                     href="#producao"
-                    className="hover:text-emerald-600 transition-colors"
+                    className="hover:text-[#8B4513] transition-colors"
                   >
                     Produção Científica
                   </a>
@@ -240,16 +244,16 @@ export default function ProfessionalPortfolio() {
             </div>
 
             <div className="space-y-6">
-              <h4 className="text-[10px] font-mono uppercase tracking-widest text-slate-900 font-bold">
+              <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#1A1A1A] font-bold">
                 Registro & Local
               </h4>
-              <div className="text-sm text-slate-500 space-y-2">
+              <div className="text-sm text-[#4A2C2A]/70 space-y-2 font-sans">
                 <p className="flex items-center gap-2">
-                  <ShieldCheck size={14} className="text-emerald-500" />
+                  <ShieldCheck size={14} className="text-[#B8860B]" />
                   CRP 03/XXXXX
                 </p>
                 <p className="flex items-center gap-2">
-                  <MapPin size={14} className="text-emerald-500" />
+                  <MapPin size={14} className="text-[#B8860B]" />
                   Salvador, Bahia
                 </p>
               </div>
@@ -257,42 +261,40 @@ export default function ProfessionalPortfolio() {
           </div>
         </motion.div>
 
-        {/* MODAL DE CONTATO REFINADO */}
+        {/* MODAL DE CONTATO AFROCENTRADO */}
         <AnimatePresence>
           {isOpen && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
-              {/* Backdrop */}
+            <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={() => setIsOpen(false)}
-                className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
+                className="absolute inset-0 bg-[#1A1A1A]/80 backdrop-blur-md"
               />
 
-              {/* Modal Content */}
               <motion.div
                 initial={{ scale: 0.9, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                className="relative w-full max-w-2xl bg-white rounded-[3rem] shadow-2xl overflow-hidden"
+                className="relative w-full max-w-2xl bg-white rounded-[3.5rem] shadow-2xl overflow-hidden border border-[#B8860B]/10"
               >
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="absolute top-8 right-8 p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400 hover:text-slate-900"
+                  className="absolute top-8 right-8 p-3 hover:bg-[#F9F5F1] rounded-full transition-colors text-[#A45D3D]"
                 >
                   <X size={24} />
                 </button>
 
                 <div className="p-10 md:p-16">
-                  <div className="flex items-center gap-3 mb-8 text-emerald-700">
+                  <div className="flex items-center gap-3 mb-8 text-[#8B4513]">
                     <MessageCircle size={20} />
                     <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em]">
                       Formulário de Contato
                     </span>
                   </div>
 
-                  <h3 className="text-3xl font-serif mb-10 text-slate-900">
+                  <h3 className="text-3xl font-serif mb-10 text-[#1A1A1A]">
                     Como posso te ajudar?
                   </h3>
 
@@ -306,38 +308,39 @@ export default function ProfessionalPortfolio() {
                       name="_next"
                       value="https://jenifer-psicologia.vercel.app/obrigado"
                     />
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                        <label className="text-[10px] font-bold text-[#A45D3D] uppercase ml-1">
                           Nome
                         </label>
                         <input
                           type="text"
                           name="name"
                           required
-                          className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-100 transition-all"
+                          className="w-full px-6 py-4 bg-[#F9F5F1] border-none rounded-2xl focus:ring-2 focus:ring-[#B8860B]/20 transition-all outline-none"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                        <label className="text-[10px] font-bold text-[#A45D3D] uppercase ml-1">
                           E-mail
                         </label>
                         <input
                           type="email"
                           name="email"
                           required
-                          className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-100 transition-all"
+                          className="w-full px-6 py-4 bg-[#F9F5F1] border-none rounded-2xl focus:ring-2 focus:ring-[#B8860B]/20 transition-all outline-none"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                      <label className="text-[10px] font-bold text-[#A45D3D] uppercase ml-1">
                         Finalidade
                       </label>
                       <select
                         name="subject"
-                        className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-100 transition-all text-slate-600"
+                        className="w-full px-6 py-4 bg-[#F9F5F1] border-none rounded-2xl focus:ring-2 focus:ring-[#B8860B]/20 transition-all text-[#4A2C2A] outline-none"
                       >
                         <option>Pesquisa & Acadêmico</option>
                         <option>Atendimento Clínico</option>
@@ -346,22 +349,21 @@ export default function ProfessionalPortfolio() {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                      <label className="text-[10px] font-bold text-[#A45D3D] uppercase ml-1">
                         Mensagem
                       </label>
                       <textarea
                         name="message"
                         rows={4}
                         required
-                        className="w-full px-6 py-4 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-100 transition-all resize-none"
+                        className="w-full px-6 py-4 bg-[#F9F5F1] border-none rounded-2xl focus:ring-2 focus:ring-[#B8860B]/20 transition-all resize-none outline-none"
                       ></textarea>
                     </div>
 
-                    <button className="w-full bg-[#2D4F43] text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-emerald-900 transition-all">
+                    <button className="w-full bg-[#8B4513] text-[#F9F5F1] py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-[#6D360F] transition-all shadow-lg shadow-[#8B4513]/20">
                       Enviar Mensagem
                       <Send size={18} />
                     </button>
-
                     <input type="hidden" name="_captcha" value="false" />
                   </form>
                 </div>
