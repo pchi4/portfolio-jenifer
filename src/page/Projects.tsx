@@ -9,7 +9,7 @@ export default function ProjectsSection() {
   return (
     <>
       {/* SEÇÃO DE PROJETOS - FUNDO AREIA SUAVE */}
-      <section id="projetos" className="py-32 px-6 bg-[#F9F5F1]">
+      <section id="projetos" className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <h2 className="text-5xl font-serif font-bold italic text-[#1A1A1A]">
@@ -215,7 +215,7 @@ export default function ProjectsSection() {
       </section>
 
       {/* MANIFESTO - ESTÉTICA AFROCENTRIC CLEAN */}
-      <section className="py-32 px-6 bg-white overflow-hidden relative">
+      <section className="py-32 px-6 bg-[#F9F5F1] overflow-hidden relative">
         {/* BLOB EM OURO/AREIA (Substituindo emerald-50) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#B8860B]/5 rounded-[100%] blur-3xl -z-0" />
 

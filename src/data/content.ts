@@ -3,13 +3,14 @@ export const profile = {
   pronouns: "Ela/Dela",
   role: "Psicóloga | Pós-Graduanda em Saúde Mental e Atenção Psicossocial",
   specialties: [
-    "Atenção Psicossocial",
+    "Gestalt-terapia",
+    "Saúde Mental",
     "Redução de Riscos e Danos",
-    "Saúde Coletiva",
+    
   ],
   location: "Salvador, Bahia",
   summary:
-    "Psicóloga formada pela UFBA, com consistente experiência em pesquisa científica e atuação em projetos de extensão. Possui interesse nos processos psicossociais, na redução de riscos e danos e na promoção da saúde em contextos de vulnerabilidade social. Atua de forma pautada na ética e na responsabilidade social, com foco na articulação entre prática profissional e políticas públicas voltadas ao bem-estar coletivo.",
+    "Psicóloga formada pela UFBA, com experiência em pesquisa científica e atuação em projetos de extensão na área da saúde mental e atenção psicossocial. Orientada pela Gestalt-terapia, desenvolve uma prática que articula o cuidado clínico com a compreensão dos processos psicossociais, especialmente em contextos de vulnerabilidade. Possui interesse na redução de riscos e danos e na promoção da saúde, atuando de forma ética e socialmente comprometida, com foco na interface entre clínica, políticas públicas e bem-estar coletivo.",
   seeking: ["Psicologia Clínica", "Psicologia Comunitária", "Saúde Mental"],
 };
 
@@ -80,7 +81,15 @@ export const education = [
     period: "2026 - Presente",
     status: "Em andamento",
     description:
-      "Especialização focada no cuidado em liberdade, reforma psiquiátrica e estratégias de intervenção em dispositivos da RAPS (Rede de Atenção Psicossocial).",
+      "Especialização com ênfase no cuidado em liberdade e nos princípios da reforma psiquiátrica brasileira. A formação aborda estratégias de intervenção nos diferentes dispositivos da Rede de Atenção Psicossocial (RAPS), priorizando práticas territoriais, trabalho em equipe interdisciplinar e o cuidado centrado na singularidade dos sujeitos, em articulação com seus contextos de vida e redes de apoio.",
+  },
+  {
+    degree: "Pós-Graduação em Saúde Coletiva com ênfase em Saúde da Família",
+    institution: "FACUMINAS",
+    period: "2026 - Presente",
+    status: "Em andamento",
+    description:
+      "Especialização voltada à compreensão ampliada dos processos de saúde-doença, considerando os determinantes sociais, o trabalho em equipe interdisciplinar e a atuação no território. A formação prioriza o cuidado integral, a promoção da saúde e o fortalecimento de práticas clínicas articuladas às realidades e contextos de vida dos sujeitos, com foco na atenção básica e nas redes de cuidado.",
   },
   {
     degree: "Bacharelado em Psicologia",
@@ -101,12 +110,26 @@ export const education = [
 ];
 
 export const certifications = [
+
+  {
+    title: "Psicopatologia Fenomenológico-Gestáltica",
+    issuer: "ETHOS - Estudo e Psicologia Clínicia",
+    date: "2026",
+    code: "OPCIONAL",
+  },
   {
     title: "Gestalt-terapia: uma introdução",
     issuer: "Observatório em Gestalt-Terapia IPSS/UFBA",
     date: "2025",
     code: "OPCIONAL",
     link: "https://www.even3.com.br/documentos/imprimir?i=28160375.00531502.5.8.85937463367563268&cc=DA314D57-74A5-4B41-896C-DCAE0AA70B13",
+  },
+    {
+    title: "Estratégias de Redução de Danos",
+    issuer: "ABBA Cursos",
+    date: "2026",
+    code: "OPCIONAL",
+    link: "https://www.abbacursos.com.br/qrCode.php?id=177890"
   },
   {
     title: "Letramento Racial no Setor Público",
@@ -146,21 +169,22 @@ export const certifications = [
 ];
 
 export const ethicalPillars = [
+    {
+    title: "Presença e Escuta Clínica",
+    description:
+      "Acompanhamento psicológico centrado na experiência do aqui-agora, favorecendo o contato com emoções, sensações e sentidos.",
+  },
+    {
+    title: "Autonomia, Cuidado e Sustentação de Si",
+    description:
+      "Promoção de um cuidado que fortalece a autonomia, a construção de limites e a capacidade de sustentar escolhas, respeitando singularidades e contextos de vida.",
+  },
   {
     title: "Interseccionalidade",
     description:
-      "Prática clínica e social atenta às dinâmicas de raça, classe e gênero no território baiano.",
+      "Prática clínica, social e política, atenta às dinâmicas de raça, classe, gênero e território.",
   },
-  {
-    title: "Redução de Danos",
-    description:
-      "Cuidado pautado na autonomia, dignidade e acolhimento sem julgamentos em contextos de vulnerabilidade.",
-  },
-  {
-    title: "Defesa do SUS e SUAS",
-    description:
-      "Compromisso com a saúde pública gratuita e de qualidade, bem como com o fortalecimento das políticas sociais.",
-  },
+
 ];
 
 export const scientificProduction = [
@@ -312,7 +336,7 @@ export const extensionGallery = [
     description:
       "Análise das repercussões psicoemocionais em adolescentes em vulnerabilidade durante a pandemia.",
     fullDescription:
-      "Estudo integrado de âmbito nacional que ouviu 43 adolescentes de Salvador em contextos de extrema vulnerabilidade (situação de rua, acolhimento institucional e conflito com a lei).",
+      "Como bolsista do projeto 'Impactos da pandemia COVID-19 - Ano II' Atuei no estudo integrado de âmbito nacional que ouviu 43 adolescentes de Salvador em contextos de extrema vulnerabilidade (situação de rua, acolhimento institucional e conflito com a lei).",
     context:
       "Pesquisa multicêntrica nacional (Brasil/Salvador), focada em adolescentes majoritariamente negros e residentes de territórios periféricos.",
     methodology:
@@ -338,14 +362,14 @@ export const extensionGallery = [
     description:
       "Promoção de ocupação lúdica e desinstitucionalização dos tempos livres na universidade.",
     fullDescription:
-      "Projeto fundamentado nos princípios de infância livre do consumo e solidariedade. Permitindo às crianças (filhas de estudantes e servidores) ocupar o espaço universitário com liberdade lúdica.",
+      "Projeto fundamentado nos princípios de infância livre do consumo e solidariedade. Permitindo às crianças ocupar o espaço universitário com liberdade lúdica.",
     context:
       "Campus Federação/Ondina da UFBA. Resposta à necessidade de acolhimento de crianças dentro da comunidade acadêmica.",
     methodology:
       "Práticas de monitoria participativa baseadas na pedagogia do lazer e na ocupação de espaços públicos.",
     results:
       "Consolidação das edições mensais como ponto de encontro e suporte para a permanência estudantil de mães e pais universitários.",
-    tags: ["Infância", "Lazer e Saúde", "Intervenção Grupal"],
+    tags: ["Infância", "Brincar", "Intervenção Grupal"],
     objectives: [
       "Organização e mediação de atividades lúdicas criativas.",
       "Acolhimento de familiares e suporte à desinstitucionalização do tempo livre.",

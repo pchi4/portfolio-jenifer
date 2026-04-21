@@ -18,7 +18,7 @@ export default function Experience() {
               </h2>
               <p className="text-slate-500 text-lg leading-relaxed">
                 Consolidando a escuta clínica no serviço público e em projetos
-                de intervenção psicossocial no território baiano.
+                de saúde mental e atenção psicossocial no território baiano.
               </p>
 
               <div className="mt-12 p-6 bg-white rounded-2xl border border-slate-100 shadow-sm">
@@ -26,6 +26,9 @@ export default function Experience() {
                   Foco de Atuação:
                 </p>
                 <ul className="text-sm text-slate-500 space-y-2">
+                       <li className="flex items-center gap-2">
+                    • Escuta Clínica 
+                  </li>
                   <li className="flex items-center gap-2">
                     • Cuidado em Saúde Mental 
                   </li>
@@ -35,6 +38,7 @@ export default function Experience() {
                   <li className="flex items-center gap-2">
                     • Intensificação de Cuidado e Tratamento
                   </li>
+                  
                 </ul>
               </div>
             </div>

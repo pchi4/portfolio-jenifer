@@ -12,6 +12,7 @@ import {
   BookOpen,
   Instagram,
   Linkedin,
+  Whatsapp,
   Mail,
   MapPin,
   MessageCircle,
@@ -59,8 +60,6 @@ export default function ProfessionalPortfolio() {
         className="fixed top-0 left-0 right-0 h-1 bg-[#B8860B] origin-left z-[60]"
         style={{ scaleX }}
       />
-
-      {/* NAVBAR MINIMALISTA */}
       <nav className="fixed top-6 w-full z-[100] px-4">
         <div className="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl border border-[#B8860B]/10 shadow-[0_8px_32px_rgba(139,69,19,0.08)] rounded-full px-6 h-16 flex items-center justify-between gap-4">
           <a
@@ -93,18 +92,25 @@ export default function ProfessionalPortfolio() {
               Trajetória
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
             </a>
-            <a
-              href="#producao"
+             <a
+              href="#formacao"
               className="hover:text-[#8B4513] transition-all relative group"
             >
-              Produção
+              Formações
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
+            </a>
+            <a
+              href="#projetos"
+              className="hover:text-[#8B4513] transition-all relative group"
+            >
+              Projetos
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#B8860B] transition-all group-hover:w-full" />
             </a>
           </div>
 
           <div className="flex sm:hidden items-center gap-4 text-[9px] font-bold uppercase tracking-widest text-slate-500">
             <a href="#sobre">Sobre</a>
-            <a href="#producao">Produção</a>
+            <a href="#projetos">Projetos</a>
           </div>
 
           <a
@@ -116,30 +122,20 @@ export default function ProfessionalPortfolio() {
         </div>
       </nav>
 
-      {/* HERO SECTION - ESTILO EDITORIAL */}
       <Hero />
 
-      {/* VALORES */}
       <ValuesSection />
 
-      {/* EXPERIÊNCIA - GRID PROFISSIONAL */}
       <Experience />
 
-      {/* FORMAÇÃO E CERTIFICAÇÕES - LAYOUT "CLEAN CARD" */}
       <EducationSection />
 
-      {/* GALERIA DE EXTENSÃO - LADO HUMANO E VISUAL */}
-
       <ProjectsSection />
-      {/* SEÇÃO ABORDAGEM TÉCNICA */}
-
-      
 
       <footer
         id="contato"
-        className="relative py-32 bg-[#F9F5F1] border-t border-[#B8860B]/10 px-6 overflow-hidden"
+        className="relative py-32 bg-white border-t border-[#B8860B]/10 px-6 overflow-hidden"
       >
-        {/* Decor de fundo em tom Argila/Ouro */}
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#B8860B]/5 rounded-full blur-[100px] pointer-events-none" />
 
         <motion.div
@@ -150,16 +146,19 @@ export default function ProfessionalPortfolio() {
         >
           <div className="max-w-4xl mx-auto text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-[1.1] text-[#1A1A1A]">
-              Vamos construir uma escuta que faça sentido para o{" "}
-              <span className="italic text-[#8B4513]">seu território?</span>
+              Vamos construir uma escuta que sustente sua experiência
+              <span className="italic text-[#8B4513]">
+                {" "}
+                e faça sentido para você?
+              </span>
             </h2>
             <p className="text-[#4A2C2A]/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed font-sans">
-              Disponível para colaborações em projetos de impacto social,
-              pesquisa acadêmica e clínica psicanalítica em Salvador.
+              Disponível para atuação em serviços de saúde mental, colaborações
+              em diferentes contextos institucionais, pesquisa acadêmica e
+              prática clínica gestáltica, em Salvador.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              {/* BOTÃO CONTATO - TERRACOTA */}
               <button
                 onClick={() => setIsOpen(true)}
                 className="group flex items-center justify-center gap-3 px-10 py-5 bg-[#8B4513] text-[#F9F5F1] rounded-full font-bold text-base hover:bg-[#6D360F] hover:shadow-[0_20px_40px_rgba(139,69,19,0.2)] transition-all duration-500 w-full sm:w-auto"
@@ -172,7 +171,20 @@ export default function ProfessionalPortfolio() {
               </button>
 
               <a
-                href="http://lattes.cnpq.br/xxxxxxxx"
+                href="https://wa.me/5571983940229" // Substitua pelo número real
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 px-8 py-5 bg-[#25D366] text-white rounded-full font-bold text-base hover:bg-[#128C7E] hover:shadow-[0_20px_40px_rgba(37,211,102,0.2)] transition-all duration-500 w-full sm:w-auto"
+              >
+                <MessageCircle
+                  size={20}
+                  className="group-hover:scale-110 transition-transform"
+                />
+                WhatsApp
+              </a>
+
+              <a
+                href="http://lattes.cnpq.br/2792403100176978"
                 target="_blank"
                 className="flex items-center justify-center gap-3 px-10 py-5 bg-white border border-[#B8860B]/20 rounded-full font-bold text-base hover:bg-[#F9F5F1] transition-all w-full sm:w-auto shadow-sm text-[#8B4513]"
               >
@@ -182,15 +194,14 @@ export default function ProfessionalPortfolio() {
             </div>
           </div>
 
-          {/* Informações de Rodapé */}
-          <div className="grid md:grid-cols-4 gap-12 pt-20 border-t border-[#B8860B]/10">
+          <div className="grid  md:grid-cols-4 gap-12 pt-20 border-t border-[#B8860B]/10">
             <div className="md:col-span-2 space-y-6">
               <div>
                 <h3 className="font-serif text-2xl font-bold text-[#1A1A1A]">
                   {profile.name}
                 </h3>
                 <p className="text-xs font-mono uppercase tracking-[0.3em] text-[#B8860B] font-bold mt-2">
-                  Psicóloga & Pesquisadora
+                  Psicóloga Clínica & Pesquisadora
                 </p>
               </div>
               <p className="text-sm text-[#4A2C2A]/70 max-w-xs leading-relaxed font-sans">
@@ -205,7 +216,10 @@ export default function ProfessionalPortfolio() {
                 >
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="hover:text-[#8B4513] transition-colors">
+                <a
+                  href="https://www.instagram.com/jenifernasc.psi/"
+                  className="hover:text-[#8B4513] transition-colors"
+                >
                   <Instagram size={20} />
                 </a>
               </div>
@@ -232,12 +246,20 @@ export default function ProfessionalPortfolio() {
                     Trajetória
                   </a>
                 </li>
-                <li>
+                  <li>
                   <a
-                    href="#producao"
+                    href="#formacao"
                     className="hover:text-[#8B4513] transition-colors"
                   >
-                    Produção Científica
+                    Formações
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projetos"
+                    className="hover:text-[#8B4513] transition-colors"
+                  >
+                    Projetos
                   </a>
                 </li>
               </ul>
@@ -250,7 +272,7 @@ export default function ProfessionalPortfolio() {
               <div className="text-sm text-[#4A2C2A]/70 space-y-2 font-sans">
                 <p className="flex items-center gap-2">
                   <ShieldCheck size={14} className="text-[#B8860B]" />
-                  CRP 03/XXXXX
+                  CRP 03/35251
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin size={14} className="text-[#B8860B]" />
@@ -261,7 +283,6 @@ export default function ProfessionalPortfolio() {
           </div>
         </motion.div>
 
-        {/* MODAL DE CONTATO AFROCENTRADO */}
         <AnimatePresence>
           {isOpen && (
             <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">

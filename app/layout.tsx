@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${inter.variable} ${lora.variable} font-sans`}>
+<html lang="pt-br" className="scroll-smooth">
+      <body className="bg-[#F9F5F1] text-[#1A1A1A] antialiased">
         {children}
       </body>
     </html>
