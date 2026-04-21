@@ -12,7 +12,6 @@ import {
   BookOpen,
   Instagram,
   Linkedin,
-  Whatsapp,
   Mail,
   MapPin,
   MessageCircle,
