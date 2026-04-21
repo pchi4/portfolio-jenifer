@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ethicalPillars } from "@/src/data/content";
-import { Scale, Users, Heart, Shield, Sparkles } from "lucide-react";
+import {  Heart,  } from "lucide-react";
 
 export default function ValuesSection() {
   return (
@@ -28,13 +28,11 @@ export default function ValuesSection() {
             {/* Ícone com cores coordenadas ao tema Lattes/Escrita */}
             <div className="p-4 bg-[#B8860B]/10 rounded-2xl text-[#B8860B] group-hover:scale-110 transition-transform duration-500">
               {i === 0 && <Heart size={24} strokeWidth={1.5} />}
-              {i === 1 && <Shield size={24} strokeWidth={1.5} />}
-              {i === 2 && <Sparkles size={24} strokeWidth={1.5} />}
+              {i === 1 && <Heart size={24} strokeWidth={1.5} />}
+              {i === 2 && <Heart size={24} strokeWidth={1.5} />}
             </div>
             
-            <span className="font-serif italic text-2xl text-[#B8860B]/20 group-hover:text-[#B8860B]/40 transition-colors">
-              0{i + 1}
-            </span>
+
           </div>
 
           <h3 className="text-2xl font-serif mb-4 group-hover:text-[#F9F5F1] transition-colors">
